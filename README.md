@@ -1,1 +1,1 @@
-# exercicios
+# Este repositório conterá todos exercícios que realizarei durante meus estudos.
