@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>HTML</title>
     <style>
       body {
-        background-image: url('img/dalle.png'); /* Caminho para a imagem de fundo */
-        background-size: cover; /* Redimensiona a imagem para cobrir todo o fundo */
-        background-repeat: no-repeat; /* Evita a repetição da imagem */
-        background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */
+        background-image: url("img/porsche.jpg");
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+      }
+      #content {
+        z-index: 1;
+        color: azure;
+      }
+      #title-content {
+        background-color: #D8232A;
+        text-align: center;
       }
     </style>
   </head>
 
   <body>
-    <h1>Carros</h1>
-    <p id="paragrafo">Veja a lista dos 5 mais vendidos do Brasil:</p>
-    <ol>
-      <li>Volkswagen Polo</li>
-      <li>Chevrolet Onix</li>
-      <li>Fiat Strada</li>
-      <li>Fiat Mobi</li>
-      <li>Fiat Argo</li>
-    </ol>
+    <div id="content">
+      <div id="title-content"><h1>Carros</h1></div>
+      <p id="paragrafo">Veja a lista dos 5 mais vendidos do Brasil:</p>
+      <ol>
+        <li>Volkswagen Polo</li>
+        <li>Chevrolet Onix</li>
+        <li>Fiat Strada</li>
+        <li>Fiat Mobi</li>
+        <li>Fiat Argo</li>
+      </ol>
+    </div>
   </body>
 </html>
