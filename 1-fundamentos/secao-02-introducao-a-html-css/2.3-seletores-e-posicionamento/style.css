@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 920px;
+  height: 620px;
+  background-color: aqua;
+  margin: 0 auto;
+}
+
+#nav-content {
+  background-color: rgb(43, 226, 67);
+  height: 100px;
+  width: 920px;
+  /* margin: 0 auto; */
+  /* padding: 10px; */
+  /* margin: 0 5px; */
+}
+
+#content {
+  display: flex;
+}
+
+#header-content {
+  width: 900px;
+}
