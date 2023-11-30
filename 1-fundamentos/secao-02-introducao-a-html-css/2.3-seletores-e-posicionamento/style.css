@@ -23,7 +23,24 @@ main {
   width: 700px;
   height: 560px;
   background-color: brown;
+  /* display: flex; */
+}
+
+#header-content {
+  width: 100%;
+  height: 80px;
+  background-color: blue;
+}
+
+#sections {
   display: flex;
+}
+
+#section-content {
+  width: 50%;
+  height: 480px;
+  background-color: rgb(226, 95, 43);
+  /* align-items: center; */
 }
 
 #aside-content {
@@ -39,3 +56,9 @@ main {
   margin: 0 auto;
 }
 
+#nav-content, #header-content, #section-content, #aside-content, #footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
