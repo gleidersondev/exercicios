@@ -1,1 +1,33 @@
 /* Exercicíos colocar em prática o que havia aprendido sobre HTML semântico */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.centered {
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* navegação */
+
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: aqua;
+}
+
+#menu li {
+  display: inline;
+}
+
+/* header */
+
+.header {
+  font-size: 30px;
+  color: #2e2e2e;
+  text-align: center;
+}
