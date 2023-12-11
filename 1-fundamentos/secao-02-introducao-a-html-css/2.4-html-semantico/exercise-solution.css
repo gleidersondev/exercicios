@@ -23,7 +23,6 @@
   width: 920px;
   text-align: center;
   border-bottom: #2e2e2e 1px solid;
-  margin-bottom: 10px;
 }
 
 #menu li {
@@ -48,10 +47,11 @@
 /* cabeçalho */
 
 .header {
-  font-size: 30px;
+  font-size: 35px;
   width: 920px;
   color: #2e2e2e;
   text-align: center;
+  padding: 30px;
 }
 
 /* seções */
