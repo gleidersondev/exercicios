@@ -6,8 +6,11 @@
 }
 
 .centered {
-  background-color: #ffffff;
-  position: relative;
+  background: linear-gradient(to bottom, #cde0e8, #2b4e6b, #7fc7c5, #00b2b2, #d8e4e2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* navegação */
@@ -17,17 +20,83 @@
   justify-content: center;
   align-items: center;
   height: 50px;
-  background-color: aqua;
+  width: 920px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  text-align: center;
 }
 
 #menu li {
   display: inline;
 }
 
-/* header */
+/* cabeçalho */
 
 .header {
   font-size: 30px;
+  width: 920px;
   color: #2e2e2e;
   text-align: center;
+}
+
+/* seções */
+
+#content {
+  /* background-color: #920f0f; */
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  /* flex-direction: row; */
+  width: 920px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 680px;
+  /* background-color: #2b4e6b; */
+}
+
+#articles {
+
+}
+
+.stomatopoda-img {
+  width: 580px;
+  
+}
+
+/* area do aside */
+
+#aside {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 220px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#aside p {
+  padding: 10px;
+}
+
+#aside a {
+  text-decoration: none;
+  color: red
+}
+
+#aside a:hover {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+
+footer {
+  width: 920px;
+  background-color: aqua;
+  /* position: fixed;
+  top: 0px;
+  left: 0px; */
 }
