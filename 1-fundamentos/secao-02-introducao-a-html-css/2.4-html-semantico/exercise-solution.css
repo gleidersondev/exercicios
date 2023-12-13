@@ -26,7 +26,6 @@
 }
 
 #menu li {
-  /* padding: 15px;  */
   display: inline;
 }
 
@@ -40,13 +39,9 @@
 
 #menu a:hover {
   color: #ffffff;
-  background-color: #2e2e2e;
+  background-color: rgba(0, 0, 0, 0.5);
   
 }
-
-/* #menu li:hover {
-  background-color: #2e2e2e;
-} */
 
 /* cabeçalho */
 
@@ -62,12 +57,9 @@
 /* seções */
 
 #content {
-  /* background-color: #920f0f; */
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
-  /* flex-direction: row; */
   width: 920px;
+  margin: 30px 0;
 }
 
 main {
@@ -75,28 +67,62 @@ main {
   align-items: center;
   justify-content: center;
   width: 680px;
-  /* background-color: #2b4e6b; */
+  margin-right: 10px;
 }
 
-#articles {
+#articles h2, h3 {
+  padding-bottom: 20px;
+}
 
+.article-content {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 650px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.article-content p {
+  padding: 10px 0;
+}
+
+.article-content ul {
+  margin-left: 15px;
 }
 
 .stomatopoda-img {
-  width: 580px;
-  
+  width: 650px;
 }
+
+.complementary-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.complementary-img p {
+  width: 650px;
+}
+
+.article-content a {
+  color: red;
+}
+
 
 /* area do aside */
 
 #aside {
-  background-color: rgba(255, 255, 255, 0.4);
+  /* background-color: rgba(255, 255, 255, 0.4); */
+  background-color: rgba(0, 0, 0, 0.1);
   width: 220px;
   height: 500px;
   display: flex;
   align-items: center;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  color: #cde0e8;
 }
 
 #aside p {
@@ -117,6 +143,7 @@ main {
 footer {
   width: 920px;
   background-color: aqua;
+  
   /* position: fixed;
   top: 0px;
   left: 0px; */
