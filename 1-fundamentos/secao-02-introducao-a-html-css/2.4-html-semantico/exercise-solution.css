@@ -1,0 +1,139 @@
+/* Exercicíos colocar em prática o que havia aprendido sobre HTML semântico */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.centered {
+  background: linear-gradient(to bottom, #cde0e8, #2b4e6b, #7fc7c5, #00b2b2, #d8e4e2);
+  flex-wrap: wrap;
+}
+
+/* navegação */
+
+#menu {
+  height: 50px;
+  width: 920px;
+  text-align: center;
+  border-bottom: #2e2e2e 1px solid;
+}
+
+#menu li {
+  display: inline;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #2e2e2e;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 15px;
+}
+
+#menu a:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+}
+
+/* cabeçalho */
+
+.header {
+  font-size: 35px;
+  width: 920px;
+  color: #2e2e2e;
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: #2e2e2e 1px solid;
+}
+
+/* seções */
+
+#content {
+  display: flex;
+  width: 920px;
+  margin: 30px 0;
+}
+
+main {
+  width: 680px;
+  margin-right: 10px;
+}
+
+#articles h2, h3 {
+  padding-bottom: 20px;
+}
+
+.article-content {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 650px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.article-content p {
+  padding: 10px 0;
+}
+
+.article-content ul {
+  margin-left: 15px;
+}
+
+.stomatopoda-img {
+  width: 650px;
+}
+
+.complementary-img {
+  flex-wrap: wrap;
+}
+
+.complementary-img p {
+  width: 650px;
+}
+
+.article-content a {
+  color: red;
+}
+
+/* area do aside */
+
+#aside {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 220px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 10px;
+  color: #cde0e8;
+}
+
+#aside p {
+  padding: 10px;
+}
+
+#aside a {
+  text-decoration: none;
+  color: red
+}
+
+#aside a:hover {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+footer {
+  width: 890px;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 20px;
+}
+
+.centered, #menu, main, .complementary-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
