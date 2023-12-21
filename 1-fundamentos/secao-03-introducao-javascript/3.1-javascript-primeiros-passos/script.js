@@ -36,9 +36,9 @@ console.log(modulo);
 
 // 2 - Utilize o IF / ELSE para retornar o maior de três números
 
-let value1 = 4;
+let value1 = 6;
 
-let value2 = 9;
+let value2 = 3;
 
 let value3 = 6;
 
@@ -54,4 +54,20 @@ if (value1 > value2 && value1 > value3) {
   higherNumber = value3;
   console.log(value3);
 };
+
+// 3 - Verifique se um número é positivo, negativo ou zero.
+
+let checkNumber1 = 7;
+
+if (checkNumber1 === 0) {
+  console.log('Esse número é zero');
+} else if (checkNumber1 > 0) {
+  console.log('Esse número é positivo');
+} else {
+  console.log('Esse número é negativo');
+}
+
+
+
+
 
