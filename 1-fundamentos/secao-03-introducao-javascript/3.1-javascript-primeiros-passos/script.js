@@ -32,3 +32,26 @@ console.log(divisao);
 let modulo = num1 % num2
 
 console.log(modulo);
+
+
+// 2 - Utilize o IF / ELSE para retornar o maior de três números
+
+let value1 = 4;
+
+let value2 = 9;
+
+let value3 = 6;
+
+let higherNumber = 0;
+
+if (value1 > value2 && value1 > value3) {
+  higherNumber = value1;
+  console.log(value1);
+} else if (value2 > value1 && value2 > value3) {
+  higherNumber = value2;
+  console.log(value2);
+} else {
+  higherNumber = value3;
+  console.log(value3);
+};
+
