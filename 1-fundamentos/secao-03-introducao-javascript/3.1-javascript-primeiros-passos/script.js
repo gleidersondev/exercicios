@@ -103,4 +103,34 @@ if (checkMultiple % 3 === 0 && checkMultiple % 5 === 0) {
   console.log(resultMultiple);
 }
 
+// 7 - Desenvolva um código que calcule o preço final de um produto, considerando um desconto de 10% se o valor for maior que R$ 100,00.
 
+let priceProduct = 101.00;
+
+let finalPrice = 0;
+
+if (priceProduct > 100) {
+  finalPrice = priceProduct * (1 - 0.1);
+  console.log("O preço final com desconto é: " + finalPrice);
+} else {
+  finalPrice = priceProduct;
+  console.log("O valor a pagar é " + finalPrice );
+}
+
+// 8 - Faça um programa que classifique um aluno com base em sua nota, considerando as faixas de A (de 90 para cima), B (de 80 a 89), C (de 70 a 79), D (de 60 a 69) e F (abaixo de 60).
+
+let testGrade = 81;
+
+if (testGrade >= 90) {
+  console.log("Sua faixa é A");
+} else if (testGrade < 90 && testGrade >= 80) {
+  console.log("Sua faixa é B");
+} else if (testGrade < 80 && testGrade >= 70) {
+  console.log("Sua faixa é C");
+} else if (testGrade < 70 && testGrade >= 60) {
+  console.log("Sua faixa é D");
+} else if (testGrade < 60 && testGrade >= 0) {
+  console.log("Sua faixa é F");
+} else {
+  console.log("Essa nota não é válida");
+}
