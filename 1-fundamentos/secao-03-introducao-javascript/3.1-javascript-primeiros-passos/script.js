@@ -57,7 +57,7 @@ if (value1 > value2 && value1 > value3) {
 
 // 3 - Verifique se um número é positivo, negativo ou zero.
 
-let checkNumber1 = 7;
+let checkNumber1 = 17;
 
 if (checkNumber1 === 0) {
   console.log('Esse número é zero');
@@ -67,6 +67,29 @@ if (checkNumber1 === 0) {
   console.log('Esse número é negativo');
 }
 
+// 4 - Crie um programa que determine se um número é par ou ímpar.
+
+if (checkNumber1 % 2 == 0) {
+  console.log('Esse número é par');
+} else {
+  console.log('Esse número é impar');
+}
+
+// 5 - Desenvolva um código que indique se um ano é bissexto ou não.
+
+let year = 2000;
+
+let result = '';
+
+if ((year % 4 === 0 && year % 100 != 0) || year % 400 === 0 ) {
+  result = 'É um ano bissexto';
+  console.log(result);
+} else {
+  result = 'Não é um ano bissexto';
+  console.log(result);
+}
+
+// 6 - Elabore um programa que verifique se um número é múltiplo de 3 e de 5 ao mesmo tempo.
 
 
 
