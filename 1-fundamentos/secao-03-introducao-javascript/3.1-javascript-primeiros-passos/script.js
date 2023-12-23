@@ -117,11 +117,11 @@ if (priceProduct > 100) {
   console.log("O valor a pagar é " + finalPrice );
 }
 
-// 8 - Faça um programa que classifique um aluno com base em sua nota, considerando as faixas de A (de 90 para cima), B (de 80 a 89), C (de 70 a 79), D (de 60 a 69) e F (abaixo de 60).
+// 8 - Faça um programa que classifique um aluno com base em sua nota, considerando as faixas de A (de 90 até 100), B (de 80 a 89), C (de 70 a 79), D (de 60 a 69) e F (abaixo de 60).
 
-let testGrade = 81;
+let testGrade = 100;
 
-if (testGrade >= 90) {
+if (testGrade <= 100 && testGrade >= 90) {
   console.log("Sua faixa é A");
 } else if (testGrade < 90 && testGrade >= 80) {
   console.log("Sua faixa é B");
@@ -133,4 +133,4 @@ if (testGrade >= 90) {
   console.log("Sua faixa é F");
 } else {
   console.log("Essa nota não é válida");
-}
+};
