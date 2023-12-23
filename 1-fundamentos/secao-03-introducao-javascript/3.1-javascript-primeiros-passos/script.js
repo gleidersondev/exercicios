@@ -91,6 +91,16 @@ if ((year % 4 === 0 && year % 100 != 0) || year % 400 === 0 ) {
 
 // 6 - Elabore um programa que verifique se um número é múltiplo de 3 e de 5 ao mesmo tempo.
 
+let checkMultiple = 15;
 
+let resultMultiple = '';
+
+if (checkMultiple % 3 === 0 && checkMultiple % 5 === 0) {
+  resultMultiple = 'É multiplo de 3 e 5';
+  console.log(resultMultiple);
+} else {
+  resultMultiple = 'Não é multiplo de 3 e 5'
+  console.log(resultMultiple);
+}
 
 
