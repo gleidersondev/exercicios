@@ -80,6 +80,18 @@ for (let index4 = 0; index4 < numbers.length; index4 +=1) {
 
 console.log('O maior número é: ', largestNumber);
 
-
 //   f. Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a
 //   mensagem: "Nenhum valor ímpar encontrado".
+let evenNumbers = [];
+
+for (let index5 = 0; index5 < numbers.length; index5 +=1) {
+  if (numbers[index5] % 2 === 0) {
+    evenNumbers.push(numbers[index5]);
+  };
+}
+
+if (evenNumbers.length) {
+  console.log('Existem ', evenNumbers.length, ' números pares: ', evenNumbers);
+} else {
+  console.log('Nenhum valor ímpar encontrado');
+}
