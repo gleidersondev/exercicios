@@ -69,7 +69,17 @@ if (arithmeticMean > 20) {
   console.log('O valor da média aritmética é menor ou igual a 20');
 }
 
+//   e. Utilizando (for), descubra o maior valor contido no array e imprima-o.
+let largestNumber = 0;
 
-//   5. Utilizando (for), descubra o maior valor contido no array e imprima-o.
-//   6. Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a
+for (let index4 = 0; index4 < numbers.length; index4 +=1) {
+  if (numbers[index4] >= largestNumber) {
+    largestNumber = numbers[index4];
+  }
+}
+
+console.log('O maior número é: ', largestNumber);
+
+
+//   f. Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a
 //   mensagem: "Nenhum valor ímpar encontrado".
