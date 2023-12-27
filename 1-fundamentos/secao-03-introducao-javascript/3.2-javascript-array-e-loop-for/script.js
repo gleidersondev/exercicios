@@ -95,3 +95,16 @@ if (evenNumbers.length) {
 } else {
   console.log('Nenhum valor ímpar encontrado');
 }
+
+// 3 - Crie um algoritimo que imprima na tela o fatorial de 10
+
+let fatorial = 10;
+
+for (let index6 = (fatorial -1); index6 > 0; index6 -=1) {
+  fatorial *= index6;
+}
+
+// 4 - Desafio de inverter palavra:
+// Utilize a estrutura de repetição FOR para desenvolver um algoritmo que seja capaz de inverter uma palavra, como a palavra
+// "banana" para "ananab". De olho na dica 39: Pesquise sobre os seguintes métodos: (split()), reverse() e join();
+
