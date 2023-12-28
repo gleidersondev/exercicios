@@ -1,6 +1,6 @@
 # Meu repositório de exercícios
 
-Este repositório contará com algumas atividades de aprendizagem desenvolvidas por mim, durante o período em que fui aluno da [Trybe](https://www.betrybe.com/). Aqui, meu objetivo é revisar o conteúdo que aprendi e aperfeiçoar alguns projetos e exercícios por meio de versões atualizadas e aprimoradas, o que me permitirá consolidar ainda mais meus conhecimentos e demonstrar o meu progresso ao longo do tempo :rocket:
+Este repositório contará com algumas atividades de aprendizagem desenvolvidas por mim. Aqui, meu objetivo é revisar o conteúdo que aprendi durante o período em que fui aluno da [Trybe](https://www.betrybe.com/), e aperfeiçoar alguns projetos e exercícios (nem todos da trybe) por meio de versões atualizadas e aprimoradas, o que me permitirá consolidar ainda mais meus conhecimentos e demonstrar o meu progresso ao longo do tempo :rocket:
 
 ## Fundamentos do Desenvolvimento Web 
 
@@ -17,19 +17,19 @@ Este repositório contará com algumas atividades de aprendizagem desenvolvidas 
 
 ##### Bloco 3: Introdução - HTML & CSS 
 
-- [ ] 3-1: _HTML & CSS - Estruturas de página_
-- [ ] 3-2: _HTML & CSS - Primeiros passos em CSS_
-- [ ] 3-3: _HTML & CSS - Seletores e posicionamento_
-- [ ] 3-4: _HTML Semantico_
-- [ ] 3-5: _[Projeto - HTML & CSS]()_
+- [x] 3-1: _HTML & CSS - Estruturas de página_
+- [x] 3-2: _HTML & CSS - Primeiros passos em CSS_
+- [x] 3-3: _HTML & CSS - Seletores e posicionamento_
+- [x] 3-4: _HTML Semantico_
+- [x] 3-5: _[Projeto - HTML & CSS]()_
 
 ##### Bloco 4: Introdução - JavaScript 
 
-- [ ] 4-1: _JavaScript - Primeiros passos_
-- [ ] 4-2: _JavaScript - Array e loop For_
-- [ ] 4-3: _JavaScript - LÃ³gica de Programação e Algoritmos_
-- [ ] 4-4: _JavaScript - Objetos e funções_
-- [ ] 4-5: _[Projeto - Playground Functions]()_
+- [x] 4-1: _JavaScript - Primeiros passos_
+- [x] 4-2: _JavaScript - Array e loop For_
+- [x] 4-3: _JavaScript - LÃ³gica de Programação e Algoritmos_
+- [x] 4-4: _JavaScript - Objetos e funções_
+- [x] 4-5: _[Projeto - Playground Functions]()_
 
 ##### Bloco 5: Introdução - JavaScript - Projetos 
 
