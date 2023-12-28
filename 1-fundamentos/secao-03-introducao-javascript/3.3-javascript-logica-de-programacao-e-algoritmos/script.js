@@ -4,5 +4,5 @@
 
 // 1. Adiciona um valor ao balance
 // 2. Subtraia um valor do balance
-// 3. Multiplique o valor do balance por uma taxa;
+// 3. Multiplique o valor do balance por uma taxa
 // 4. Divida o valor do balance
