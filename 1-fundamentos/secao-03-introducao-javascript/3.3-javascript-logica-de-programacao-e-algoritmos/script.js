@@ -2,7 +2,24 @@
 // Considere a variável (balance), que representa a quantia em conta da pessoa cliente do TrybeBank e escreva quatro funções
 // que:
 
+let balance = 1;
+
 // 1. Adiciona um valor ao balance
+
+function depositaValor(deposito) {
+  balance += deposito;
+  return balance;
+}
+
+console.log(depositaValor(10));
+
 // 2. Subtraia um valor do balance
+
+function saqueValor(saque) {
+  balance -= saque;
+  return balance;
+}
+
+console.log(saqueValor(6));
 // 3. Multiplique o valor do balance por uma taxa
 // 4. Divida o valor do balance
