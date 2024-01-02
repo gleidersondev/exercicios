@@ -32,3 +32,10 @@ function jurosRemuneratórios() {
 console.log(jurosRemuneratórios());
 
 // 4. Divida o valor do balance
+
+function divideValor(divisor) {
+  balance /= divisor;
+  return balance;
+}
+
+console.log(divideValor(2));
