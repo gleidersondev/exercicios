@@ -2,7 +2,7 @@
 // Considere a variável (balance), que representa a quantia em conta da pessoa cliente do TrybeBank e escreva quatro funções
 // que:
 
-let balance = 1;
+let balance = 50;
 
 // 1. Adiciona um valor ao balance
 
@@ -21,5 +21,14 @@ function saqueValor(saque) {
 }
 
 console.log(saqueValor(6));
+
 // 3. Multiplique o valor do balance por uma taxa
+
+function jurosRemuneratórios() {
+  balance *= 1.06;
+  return balance;
+}
+
+console.log(jurosRemuneratórios());
+
 // 4. Divida o valor do balance
