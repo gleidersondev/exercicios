@@ -41,8 +41,20 @@ function divideValor(divisor) {
 console.log(divideValor(2));
 
 
-// 2 - Faça um programa para adicionar pessoas clientes ao array do Trybe Bank. A função deve se chamar addCustomer e
+// 2 - Faça um programa para adicionar pessoas clientes ao array do Unity Bank. A função deve se chamar addCustomer e
 // receber um parâmetro do tipo string e, caso o parâmetro não seja do tipo string, imprimir a mensagem: "O parâmetro
 // passado deve ser do tipo string".
 
-const trybeBankCustomers = ['oliva', 'Nat', 'Gus'];
+const unityBankCustomers = ['João', 'Marcos', 'Maria'];
+
+function addCustomer(custumer) {
+
+  if (typeof custumer === 'string') {
+    unityBankCustomers.push(custumer);
+    return unityBankCustomers;
+  } else {
+    return 'O parâmetro passado deve ser do tipo string';
+  }
+}
+
+console.log(addCustomer(6));
