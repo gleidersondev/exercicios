@@ -57,4 +57,4 @@ function addCustomer(custumer) {
   }
 }
 
-console.log(addCustomer(6));
+console.log(addCustomer(7));
