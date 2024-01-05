@@ -26,6 +26,6 @@ console.log(message);
 // Acesse a chave bestInTheWorld por meio da sintaxe meuobjeto['chave'] e armazene na variável achievements a
 // quantidade de titulos no seguinte formato: "A jogadora Marta Silva foi eleita a melhor do mundo por 6 vezes.
 
-const achievements = 'A jogadora Marta Silva foi eleita a melhor do mundo por ' + player['bestInThelorld'].length + ' vezes';
+const achievements = `A jogadora ${player['name']} ${player['lastName']} foi eleita a melhor do mundo por ${player['bestInThelorld'].length} vezes`;
 
 console.log(achievements);
