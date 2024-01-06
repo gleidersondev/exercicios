@@ -29,3 +29,26 @@ console.log(message);
 const achievements = `A jogadora ${player['name']} ${player['lastName']} foi eleita a melhor do mundo por ${player['bestInThelorld'].length} vezes`;
 
 console.log(achievements);
+
+// Exercício 4
+// Crie uma função para adicionar as propriedades "email", "fone", "useGithub" e "linkedIn" ao objeto customer
+
+const customer = {
+  firstName: 'Roberto',
+  age: 22,
+  job: 'Software Engineer',
+};
+
+const addProperties = (object, key, value) => {
+  if (object !== 'undefined') {
+    object[key] = value;
+    return object;
+  } else {
+    return `O objeto ${object} não existe`
+  }
+}
+
+console.log( addProperties(customer, 'email', 'batatinha@gmail.com'));
+console.log( addProperties(customer, 'fone', '+553299999-9999'));
+console.log( addProperties(customer, 'useGithub', 'github.batatinha'));
+console.log( addProperties(customer, 'linkedIn', 'linkedIn.batatinha'));
