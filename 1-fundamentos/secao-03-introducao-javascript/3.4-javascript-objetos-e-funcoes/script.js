@@ -52,3 +52,33 @@ console.log( addProperties(customer, 'email', 'batatinha@gmail.com'));
 console.log( addProperties(customer, 'fone', '+553299999-9999'));
 console.log( addProperties(customer, 'useGithub', 'github.batatinha'));
 console.log( addProperties(customer, 'linkedIn', 'linkedIn.batatinha'));
+
+// Exercício 5
+// Crie uma função que retorne 6 números aleatórios para serem apostados na megasena:
+
+const generateNumbers = () => {
+  let numbers = [];
+  let drawnNumbers = [];
+  
+  for (let index = 1; index <= 6; index +=1) {
+    const randomNumber = Math.floor(Math.random() * 60) + 1;
+    let contador = 0;
+    drawnNumbers.push(randomNumber);
+    
+    for (let i = 0; i < drawnNumbers.length; i +=1) {
+      
+      if (randomNumber === drawnNumbers[i]) {
+        contador+=1;
+        if (contador === 1) {
+          numbers.push(randomNumber);
+        }
+      }
+    }
+
+  }
+  return numbers.sort((a, b) => a - b);
+}
+
+console.log(generateNumbers());
+
+// poderia usar a função includes mas quis testar outra forma de chegar ao mesmo resultado sem ela.
