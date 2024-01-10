@@ -129,7 +129,7 @@ const addFavoriteBooks = (book) => {
 
 console.log(addFavoriteBooks(array));
 
-// Acesse as chaves name e favoriteBooks e faça um console.log() no seguinte formato:
+// 6.3 - Acesse as chaves name e favoriteBooks e faça um console.log() no seguinte formato:
 
 // "Julia tem {quantidade} livros favoritos."
 
@@ -137,6 +137,16 @@ console.log(addFavoriteBooks(array));
 // Caso a quantidade seja igual a 1, a frase deve ser:
 
 // "Julia tem 1 livro favorito."
+
+const numberOfBooks = (person) => {
+  let amount = Math.floor(Math.random() * 10) + 1;
+  if (amount != 1) {
+    return `${person} tem ${amount} livros favoritos.`;
+  }
+    return `${person} tem 1 livro favorito.`;
+};
+
+console.log(numberOfBooks(nome));
 
 // Exercício 7
 // Imagine que você seja responsável por cuidar do sistema de entrega de um restaurante e que precise enviar mensagens com
