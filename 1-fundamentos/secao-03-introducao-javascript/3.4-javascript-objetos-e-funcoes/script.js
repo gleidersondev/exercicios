@@ -82,3 +82,136 @@ const generateNumbers = () => {
 console.log(generateNumbers());
 
 // poderia usar a função includes mas quis testar outra forma de chegar ao mesmo resultado sem ela.
+
+//Exercício 6
+// Com base no objeto abaixo,faça os exercícios a seguir:
+
+const reader = {
+  name: 'Julia',
+  lastName: 'Pessoa',
+  age: 21,
+  favoriteBooks: [
+    {
+      title: 'O Senhor dos Anéis - a Sociedade do Anel',
+      author: 'J. R. R. Tolkien',
+      publisher: 'Martins Fontes',
+    },
+  ],
+};
+
+// 6.1 - Acesse as chaves name, LastName e title e exiba informações em um console.log() no seguinte formator "O livro
+// favorito de Julia Pessoa se chama 'O Senhor dos Anéis - a Sociedade do Anel.'."
+
+const nome = reader.name;
+const sobreNome = reader.lastName;
+const titulo = reader.favoriteBooks[0].title;
+
+const msg = (name, lastName, title) => {
+  return `O livro favorito de ${name} ${lastName} se chama '${title}'.`
+}
+
+console.log(msg(nome, sobreNome, titulo));
+
+
+// 6.2 - Adicione um novo livro favorito na chave favoriteBooks, que é um array de objetos. Atribua a essa chave um objeto
+// que contenha as seguintes informações:
+
+let array = {
+  title: 'Harry Potter e o Prisioneiro de Azkaban',
+  author: 'JK Rowling',
+  publisher: 'Rocco',
+}
+
+// Acesse as chaves name e favoriteBooks e faça um console.log() no seguinte formato:
+
+// "Julia tem {quantidade} livros favoritos."
+
+// {quantidade} corresponde à quantidade de livros favoritos, sendo um número gerado automaticamente pelo seu código.
+// Caso a quantidade seja igual a 1, a frase deve ser:
+
+// "Julia tem 1 livro favorito."
+
+// Exercício 7
+// Imagine que você seja responsável por cuidar do sistema de entrega de um restaurante e que precise enviar mensagens com
+// as informações da compra. Para isso, use o seguinte código:
+
+const order = {
+  name: 'Rafael Andrade',
+  phoneNumber: '11-98763-1416',
+  address: {
+    street: 'Rua das Flores',
+    number: '389',
+    apartment: '701',
+  },
+  order: {
+    pizza: {
+      marguerita: {
+        amount: 1,
+        price: 25,
+      },
+      pepperoni: {
+        amount: 1,
+        price: 20,
+      },
+    },
+    drinks: {
+      coke: {
+        type: 'Coca-Cola Zero',
+        price: 10,
+        amount: 1,
+      },
+    },
+    delivery: {
+      deliveryPerson: 'Ana Silveira',
+      price: 5,
+    },
+  },
+  payment: {
+    total: 60,
+  },
+};
+
+// 7.1 - Complete a função customerInfo() para que seu retorno seja: Olá, Ana Silveira, entrega para: Rafael Andrade,
+// Telefone: 11-98763-1416, Rua das Flores, Número: 389, AP: 701.
+
+// De olho na dica: Note que o parâmetro da função já está sendo passado na chamada da função.
+
+// 7.2 - Complete a função orderModifier () para que seu retorno seja: Olá, Luiz Silva, o valor total de seu pedido de
+// marguerita, pepperoni e Coca-Cola Zero é R$ 50,00.
+// . Modifique o nome da pessoa compradora para Luiz Silva;
+// . Modifique o valor total da compra para R$ 50,00.
+
+
+
+
+// Exercício 8
+// Suponha que você esteja trabalhando para uma escola e precise fazer algumas atualizações no sistema. Para isso, considere
+// a seguinte base de dados:
+
+const school = {
+  lessons: [
+    {
+      course: 'Python',
+      students: 20,
+      professor: 'Carlos Patrício',
+      shift: 'Manhã',
+    },
+    {
+      course: 'Kotlin',
+      students: 10,
+      professor: 'Gabriel Oliva',
+      shift: 'Noite',
+    },
+    {
+      course: 'JavaScript',
+      students: 738,
+      professor: 'Gustavo Caetano',
+      shift: 'Tarde',
+    },
+    {
+      course: 'MongoDB',
+      students: 50,
+      shift: 'Noite',
+    },
+  ]
+};
