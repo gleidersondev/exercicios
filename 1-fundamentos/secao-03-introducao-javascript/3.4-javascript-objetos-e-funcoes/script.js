@@ -108,7 +108,7 @@ const titulo = reader.favoriteBooks[0].title;
 
 const msg = (name, lastName, title) => {
   return `O livro favorito de ${name} ${lastName} se chama '${title}'.`
-}
+};
 
 console.log(msg(nome, sobreNome, titulo));
 
@@ -120,7 +120,14 @@ let array = {
   title: 'Harry Potter e o Prisioneiro de Azkaban',
   author: 'JK Rowling',
   publisher: 'Rocco',
-}
+};
+
+const addFavoriteBooks = (book) => {
+  reader.favoriteBooks.push(book);
+  return reader;
+} 
+
+console.log(addFavoriteBooks(array));
 
 // Acesse as chaves name e favoriteBooks e faça um console.log() no seguinte formato:
 
