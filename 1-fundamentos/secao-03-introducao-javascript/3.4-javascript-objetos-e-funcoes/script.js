@@ -207,8 +207,20 @@ console.log(customerInfo(order));
 // . Modifique o nome da pessoa compradora para Luiz Silva;
 // . Modifique o valor total da compra para R$ 50,00.
 
+const orderModifier = (fullOrder) => {
+  fullOrder.name = 'Luiz Silva';
+  fullOrder.payment.total = 50;
+  let name = fullOrder.name;
+  let marguerita = Object.keys(fullOrder.order.pizza)[0];
+  let pepperoni = Object.keys(fullOrder.order.pizza)[1];
+  let coke = Object.values(fullOrder.order.drinks.coke)[0];
+  let payment = Object.values(fullOrder.payment)[0];
 
+  return `Olá, ${name}, o valor total de seu pedido de
+  ${marguerita}, ${pepperoni} e ${coke} é R$ ${payment.toFixed(2)}.`
+}
 
+console.log(orderModifier(order));
 
 // Exercício 8
 // Suponha que você esteja trabalhando para uma escola e precise fazer algumas atualizações no sistema. Para isso, considere
