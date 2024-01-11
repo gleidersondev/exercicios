@@ -160,6 +160,7 @@ const order = {
     number: '389',
     apartment: '701',
   },
+
   order: {
     pizza: {
       marguerita: {
@@ -183,6 +184,7 @@ const order = {
       price: 5,
     },
   },
+
   payment: {
     total: 60,
   },
@@ -190,6 +192,13 @@ const order = {
 
 // 7.1 - Complete a função customerInfo() para que seu retorno seja: Olá, Ana Silveira, entrega para: Rafael Andrade,
 // Telefone: 11-98763-1416, Rua das Flores, Número: 389, AP: 701.
+
+const customerInfo = (fullOrder) => {
+  return `Olá, ${fullOrder.order.delivery.deliveryPerson}, entrega para: ${fullOrder.name},
+  Telefone: ${fullOrder.phoneNumber}, ${fullOrder.address.street}, Número: ${fullOrder.address.number}, AP: ${fullOrder.address.apartment}`
+}
+
+console.log(customerInfo(order));
 
 // De olho na dica: Note que o parâmetro da função já está sendo passado na chamada da função.
 
