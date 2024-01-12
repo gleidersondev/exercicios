@@ -271,7 +271,22 @@ const valorDaChave = (objeto) => {
 } 
 
 console.log(valorDaChave(school));
+
 // 8.2 - Crie uma função que retorne a soma do número total de estudantes em todos os cursos.
+
+const somaTotal = () => {
+  let array = valorDaChave(school);
+  let result = 0;
+
+  for (let index = 0; index < array.length; index +=1) {
+    const element = array[index][1];
+    result += element;
+  }
+  return result;
+}
+
+console.log(somaTotal());
+
 // 8.3 - Crie uma função que verifica se uma determinada chave existe em todos os elementos do array (lessons). O retorno
 // deve ser um booleano (true ou false). Essa função deve possuir dois parâmetros: o objeto e o nome da chave.
 // 8.4 - Crie uma função para alterar o turno para noite no curso de Python. Essa função deve ter três parâmetros: a base de
