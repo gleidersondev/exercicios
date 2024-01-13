@@ -289,6 +289,14 @@ console.log(somaTotal());
 
 // 8.3 - Crie uma função que verifica se uma determinada chave existe em todos os elementos do array (lessons). O retorno
 // deve ser um booleano (true ou false). Essa função deve possuir dois parâmetros: o objeto e o nome da chave.
+
+const verificaChave = (objeto, chave) => {
+  const elemento = objeto.lessons;
+  const contem = elemento.find(e => Object.keys(e).includes(chave));
+  return contem !== undefined;
+}
+
+console.log(verificaChave(school,'batata'));
 // 8.4 - Crie uma função para alterar o turno para noite no curso de Python. Essa função deve ter três parâmetros: a base de
 // dados a ser modificada, o nome do curso e o novo valor da chave.
 
