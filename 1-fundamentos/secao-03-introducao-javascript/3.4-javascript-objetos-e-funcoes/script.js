@@ -297,8 +297,24 @@ const verificaChave = (objeto, chave) => {
 }
 
 console.log(verificaChave(school,'batata'));
+
 // 8.4 - Crie uma função para alterar o turno para noite no curso de Python. Essa função deve ter três parâmetros: a base de
 // dados a ser modificada, o nome do curso e o novo valor da chave.
+
+const alteraTurno = (base, curso, turno) => {
+  const elemento = base.lessons;
+  for (let index = 0; index < elemento.length; index += 1) {
+    if (elemento[index].course === curso) {
+      elemento[index].shift = turno;
+    }
+  }
+  return base;
+}
+  
+
+
+
+console.log(alteraTurno(school, 'Python', 'Noite'));
 
 // Exercício 9
 // Por meio do array de frutas chamado (basket), crie um objeto que contenha o nome da fruta como chave e a quantidade de
