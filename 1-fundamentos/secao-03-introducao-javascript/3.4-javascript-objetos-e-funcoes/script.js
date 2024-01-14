@@ -259,6 +259,8 @@ const school = {
 };
 
 // 8.1 - Crie uma função que obtenha o valor da chave de acordo com sua posição no array.
+
+// lista todas as chaves:
 const valorDaChave = (objeto) => {
   let elemento = objeto.lessons;
   let resultado = [];
@@ -271,6 +273,17 @@ const valorDaChave = (objeto) => {
 } 
 
 console.log(valorDaChave(school));
+
+// lista uma chave de acordo com uma posição específica
+
+const obterValorEspecifico = (obj, index) => {
+  const resultado = Object.values(obj.lessons[index]);
+  return resultado;
+}
+
+console.log(obterValorEspecifico(school, 0));
+
+
 
 // 8.2 - Crie uma função que retorne a soma do número total de estudantes em todos os cursos.
 
@@ -310,9 +323,6 @@ const alteraTurno = (base, curso, turno) => {
   }
   return base;
 }
-  
-
-
 
 console.log(alteraTurno(school, 'Python', 'Noite'));
 
@@ -327,7 +337,6 @@ const retorno = {
   Abacate: 1,
   Uva: 1 
 }
-
 
 // Em seguida, imprima esse resultado na tela com uma mensagem no seguinte formato: Sua cesta possui: x Melancias, x abacates...
 
@@ -352,3 +361,22 @@ const basket = [
   'Pera', 'Melancia', 'Jaca', 'Banana', 'Laranja', 'Jaca',
   'Banana', 'Pera', 'Abacate', 'Uva',
 ];
+
+const contadorDeFrutas = (conjunto) => {
+  const estoqueDeFrutas = {};
+
+  for (let index = 0; index < conjunto.length; index +=1) {
+
+    let contem = estoqueDeFrutas.hasOwnProperty(conjunto[index]);
+    
+    if (contem) {
+      estoqueDeFrutas[conjunto[index]] +=1;
+    } else {
+      estoqueDeFrutas[conjunto[index]] = 1;
+    }
+  }
+
+  return estoqueDeFrutas;
+}
+
+console.log(contadorDeFrutas(basket));
