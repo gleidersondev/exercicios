@@ -305,11 +305,11 @@ console.log(somaTotal());
 
 const verificaChave = (objeto, chave) => {
   const elemento = objeto.lessons;
-  const contem = elemento.find(e => Object.keys(e).includes(chave));
-  return contem !== undefined;
+  const contem = elemento.every(e => e.hasOwnProperty(chave));
+  return contem;
 }
 
-console.log(verificaChave(school,'batata'));
+console.log(verificaChave(school,'course'));
 
 // 8.4 - Crie uma função para alterar o turno para noite no curso de Python. Essa função deve ter três parâmetros: a base de
 // dados a ser modificada, o nome do curso e o novo valor da chave.
