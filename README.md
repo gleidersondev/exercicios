@@ -21,9 +21,9 @@ Este repositório conterá algumas atividades de aprendizagem desenvolvidas por 
 - [x] 3-2: _HTML & CSS - Primeiros passos em CSS_
 - [x] 3-3: _HTML & CSS - Seletores e posicionamento_
 - [x] 3-4: _HTML Semantico_
-- [x] 3-5: _[Projeto - TecBlog](https://github.com/gleidersondev/Project-tecblog)_
-- [x] 3-6: _[Projeto - Anna Bella](https://github.com/gleidersondev/Project-anna-bella)_
-- [x] 3-7: _[Projeto - Treine-me](https://github.com/gleidersondev/Project-treine-me)_
+- [x] 3-5: _[Projeto - TecBlog](https://github.com/gleidersondev/Project-tecblog){:target="_blank"}_
+- [x] 3-6: _[Projeto - Anna Bella](https://github.com/gleidersondev/Project-anna-bella){:target="_blank"}_
+- [x] 3-7: _[Projeto - Treine-me](https://github.com/gleidersondev/Project-treine-me){:target="_blank"}_
 
 ##### Bloco 4: Introdução - JavaScript :white_check_mark:
 
