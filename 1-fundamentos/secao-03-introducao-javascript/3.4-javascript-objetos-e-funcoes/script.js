@@ -316,15 +316,23 @@ console.log(verificaChave(school,'course'));
 
 const alteraTurno = (base, curso, turno) => {
   const elemento = base.lessons;
+  let cursoEncontrado =  false;
   for (let index = 0; index < elemento.length; index += 1) {
     if (elemento[index].course === curso) {
       elemento[index].shift = turno;
+      cursoEncontrado = true;
+      break;
     }
   }
+
+  if (!cursoEncontrado) {
+    return `Curso "${curso}" não encontrado.`
+  }
+
   return base;
 }
 
-console.log(alteraTurno(school, 'Python', 'Noite'));
+console.log(alteraTurno(school, 'Matematica', 'Noite'));
 
 // Exercício 9
 // Por meio do array de frutas chamado (basket), crie um objeto que contenha o nome da fruta como chave e a quantidade de
