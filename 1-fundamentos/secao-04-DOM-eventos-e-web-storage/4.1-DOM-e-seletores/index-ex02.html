@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JS DOM paragraph style</title>
+  </head>
+  <body>
+    <p id="text">JavaScript Exercises - w3resource</p>
+    
+    <div>
+      <button id="jsstyle">Style</button>
+    </div>
+
+    <script>
+
+      // Modifique o estilo do texto do parágrafo através do código javascript.
+
+      const text = document.getElementById('text');
+      const btn = document.querySelector('#jsstyle');
+      let styleText = false;
+
+      console.log(styleText);
+      
+      const changeStyle = () => {
+        if (!styleText) {
+          text.style.color = 'red';
+          text.style.fontFamily = 'comic Sans MS, sans-serif';
+          styleText = true;
+        } else {
+          text.style.color = 'black';
+          text.style.fontFamily = 'Arial, sans-serif';
+          styleText = false;
+        }
+      };
+
+      btn.addEventListener('click', changeStyle);
+      
+    </script>
+  </body>
+</html>

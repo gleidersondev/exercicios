@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="resume">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="resume">Segundo parágrafo!</p>
+    </header>
+
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+      const title = document.getElementById("page-title");
+      title.innerText = "A Cabana";
+
+      const secondParagraph = document.getElementById("second-paragraph");
+      secondParagraph.innerText = "Trata-se de um filme que retrata um encontro de um homem com Deus, e ele tem que tomar umas das decisões mais difíceis de sua vida";
+
+      const subtitle = document.getElementById("subtitle");
+      subtitle.innerText = 'Resumo do Livro';
+
+      const recoverParagraph = document.getElementsByClassName("resume");
+      console.log(recoverParagraph);
+    </script>
+
+  </body>
+</html>
