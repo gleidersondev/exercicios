@@ -28,9 +28,7 @@
   <script>
 
     // Acesse o elemento (where-are-you)
-
-    const whereAreYou = document.querySelector('#where-are-you')
-    // console.log(whereAreYou);
+    const whereAreYou = document.querySelector('#where-are-you');
 
     // Acesse parent a partir de (where-are-you) e adicione uma color a ele.
     const elementColor = whereAreYou.parentElement.style.background = "green";
@@ -46,8 +44,16 @@
     const firstChild = parent.firstElementChild;
     
     console.log(firstChild);
-    // Acesse o first-child) a partir de (where-are-you
-    // Acesse o texto (Attention! a partir de (where-are-you.
+
+    // Acesse o (first-child) a partir de (where-are-you)
+    const acessFirstChild = whereAreYou.previousElementSibling;
+
+    console.log(acessFirstChild);
+
+    // Acesse o texto (Attention! a partir de (where-are-you)
+    const acessTextAttention = whereAreYou.nextSibling;
+
+    console.log(acessTextAttention);
     // Acesse o (third-child) a partir de (where-are-you
     // Acesse o (third-child) a partir de parent).
 
