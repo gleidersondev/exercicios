@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <main id="parent-of-parent">
+    <section id="parent">
+
+      <section id="first-child"></section>
+      
+      <section id="where-are-you">
+        <section id="first-child-of-child"></section>
+      </section>
+
+      Attention!
+
+      <section id="third-child"></section>
+
+      <section id="fourth-and-last-child"></section>
+
+    </section>
+  </main>
+
+  <script>
+
+    // Acesse o elemento (where-are-you)
+    const whereAreYou = document.querySelector('#where-are-you');
+
+    // Acesse parent a partir de (where-are-you) e adicione uma color a ele.
+    const elementColor = whereAreYou.parentElement.style.background = "green";
+
+    // Acesse o (first-child-of-child) e adicione um texto a ele. Você se lembra dos vídeos da aula anterior?
+    const elementText = whereAreYou.firstElementChild.textContent = 'Primeiro Filho do Filho';
+
+    console.log(elementText);
+
+    // Acesse o first-child) a partir de parent
+    const parent = document.querySelector('#parent');
+
+    const firstChild = parent.firstElementChild;
+    
+    console.log(firstChild);
+
+    // Acesse o (first-child) a partir de (where-are-you)
+    const acessFirstChild = whereAreYou.previousElementSibling;
+
+    console.log(acessFirstChild);
+
+    // Acesse o texto (Attention! a partir de (where-are-you)
+    const acessTextAttention = whereAreYou.nextSibling;
+
+    console.log(acessTextAttention);
+    // Acesse o (third-child) a partir de (where-are-you
+    const acessThirdChild = whereAreYou.nextElementSibling;
+
+    console.log(acessThirdChild);
+    // Acesse o (third-child) a partir de parent).
+    const thirdChild = parent.lastElementSibling.previousElementSibling;
+
+    console.log(thirdChild);
+
+
+  </script>
+  
+</body>
+</html>
