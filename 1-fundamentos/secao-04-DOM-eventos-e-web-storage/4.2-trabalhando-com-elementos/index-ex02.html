@@ -51,10 +51,13 @@
 
     primeiroFilhoDoFilho.appendChild(primeiroFilho);
 
-
-
-
     // Apartir desse filho criado, acesse terceiroFilho 
+
+    const primeiroFilhoDoFilhoDoFilho = document.getElementById('primeiroFilhoDoFilhoDoFilho');
+
+    const acessoTerceiroFilho = primeiroFilhoDoFilhoDoFilho.parentElement.parentElement.nextElementSibling;
+
+    console.log(acessoTerceiroFilho);
 
   </script>
   
