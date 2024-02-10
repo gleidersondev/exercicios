@@ -12,7 +12,7 @@
       <section id="first-child">
         <h2>Primeiro Filho</h2>
       </section>
-      <section id="">
+      <section id="where-are-you">
         <h2>Elemento que você deve remover</h2>
       </section>
       <section id="third-child">
@@ -28,7 +28,14 @@
 
       // Remova a tag h2, filha do elemento where-are-you
 
+      const elemento = document.getElementById('where-are-you');
+
+      const removeTag = elemento.firstElementChild; 
       
+      console.log(removeTag);
+
+      removeTag.remove();
+
     </script>
   </main>
   
