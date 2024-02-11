@@ -57,9 +57,17 @@
   </head>
   <body>
     <script>
-      //1 - Adicione a tag h1 com o texto Agência de Viagens como filha da tag body
-      const body = document.querySelector('body')
-      body.innerHTML = '<h1>Agência de Viagens</h1>';
+      // 1 - Adicione a tag h1 com o texto Agência de Viagens como filha da tag body
+      const criaH1 = document.createElement('h1');
+
+      criaH1.textContent = 'Agência de Viagens';
+
+      const body = document.querySelector('body');
+
+      body.appendChild(criaH1);
+
+      // 2 - Adicione a tag main com a classe main-content como filho da tag body
+  
 
     </script>
   </body>
