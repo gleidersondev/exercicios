@@ -67,7 +67,17 @@
       body.appendChild(criaH1);
 
       // 2 - Adicione a tag main com a classe main-content como filho da tag body
-  
+
+      const tagMain = document.createElement('main');
+
+      tagMain.classList.add('main-content');
+
+      body.appendChild(tagMain);
+
+      const h1 = document.querySelector('h1');
+      const main = document.querySelector('main');
+
+      main.appendChild(h1);
 
     </script>
   </body>
