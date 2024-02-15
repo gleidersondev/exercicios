@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 1 - Adicione a tag h1 com o texto Agência de Viagens como filha da tag body
+      const criaH1 = document.createElement('h1');
+
+      criaH1.textContent = 'Agência de Viagens';
+
+      const body = document.querySelector('body');
+
+      body.appendChild(criaH1);
+
+      // 2 - Adicione a tag main com a classe main-content como filho da tag body
+
+      const tagMain = document.createElement('main');
+
+      tagMain.classList.add('main-content');
+
+      body.appendChild(tagMain);
+
+      const h1 = document.querySelector('h1');
+      const main = document.querySelector('main');
+
+      main.appendChild(h1);
+
+      // 3 - Adicione a tag section com a classe center-content como filha da tag main criada no passo 2;
+
+      const section1 = document.createElement('section');
+
+      section1.classList.add('center-content');
+
+      main.appendChild(section1);
+
+      // 4 - Adicione a tag p como filha da section criada no passo 3 e coloque algum texto;
+
+      const tagP = document.createElement('p');
+
+      tagP.textContent = "Somos apaixonados por explorar o mundo e queremos compartilhar essa paixão com você. Aqui, na nossa agência, não apenas organizamos viagens, mas também criamos experiências inesquecíveis.";
+
+      const selectSection1 = document.querySelector('.center-content');
+
+      selectSection1.appendChild(tagP);
+
+      // 5 - Adicione a tag section com a classe left-content como filha da tag main criada no passo 2;
+
+      const section2 = document.createElement('section');
+
+      section2.classList.add('left-content');
+
+      main.appendChild(section2);
+
+      // 6 - Adicione a tag section com a classe rigth-content como filha da tag main criada no passo 2;
+
+      const section3 = document.createElement('section');
+
+      section3.classList.add('rigth-content');
+
+      main.appendChild(section3);
+
+      // 7 - Adicione a imagem https://picsum.photos/200 e classe  small-image. Esse elemento deve ser filho do sectio criado no passo 5
+
+      const tagImag = document.createElement('img')
+
+      tagImag.classList.add('small-image');
+      
+      tagImag.src = 'https://picsum.photos/200';
+
+      section2.appendChild(tagImag);
+
+      console.log(section2);
+
+      // 8 - Adicione uma lista não ordenada com valores de 1 a 10 por extenso, ou seja, um, dois, três, e assim por diante.
+      // Essa lista deve ser filha do section criado no passo 6;
+
+      const numbersInWords = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+
+      const tagUl = document.createElement('ul'); // cria tag <ul>
+
+      section3.appendChild(tagUl); //adiciona tag <ul> section3
+
+      const rigthContent = document.querySelector('.rigth-content'); //seleciona a section3
+
+      const selectUl = rigthContent.firstElementChild; // seleciona a ul 
+
+      numbersInWords.forEach(e => {
+        const tagLi = document.createElement('li'); //cria elemento <li>
+        tagLi.textContent = e;
+        selectUl.appendChild(tagLi);
+      });
+    </script>
+  </body>
+</html>
