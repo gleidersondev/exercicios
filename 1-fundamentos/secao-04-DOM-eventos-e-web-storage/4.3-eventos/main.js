@@ -11,6 +11,25 @@ firstLi.classList.remove('tech');
 // Por causa da propriedade tech que descoloca a li -20px no eixo y
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando este for clicado.
+
+// const addClassTech = () => 
+
+
+const selecionaListas = document.querySelectorAll('[class="container"] li');
+
+console.log(selecionaListas);
+
+const pegarLiUnica = (event) => {
+  selecionaListas.forEach(e => {
+    if (e === event.target) {
+      e.classList.add('tech')
+    }
+  });
+};
+
+addEventListener('click', pegarLiUnica);
+
+
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como é possível fazer isso? Dica: Lembre-se do método `.classList.remove`.
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
