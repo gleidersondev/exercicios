@@ -19,15 +19,16 @@ const selecionaListas = document.querySelectorAll('[class="container"] li');
 
 console.log(selecionaListas);
 
-const pegarLiUnica = (event) => {
+const pegarLiUnica = () => {
   selecionaListas.forEach(e => {
-    if (e === event.target) {
-      e.classList.add('tech')
-    }
+    e.addEventListener('click', (event) => {
+      event.target.classList.add('tech');
+    });
   });
 };
 
-addEventListener('click', pegarLiUnica);
+pegarLiUnica();
+
 
 
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como é possível fazer isso? Dica: Lembre-se do método `.classList.remove`.
