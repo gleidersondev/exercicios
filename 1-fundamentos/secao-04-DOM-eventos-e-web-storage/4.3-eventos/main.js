@@ -62,8 +62,6 @@ const alteraTextClassTech = (event) => {
 
 input.addEventListener('input', alteraTextClassTech);
 
-
-
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy',
 // redirecione para alguma página.
 // 4.1. Que tal redirecionar para seu portfólio? Dica: Lembre-se dos métodos `window.location.replace` e `window.open`.
