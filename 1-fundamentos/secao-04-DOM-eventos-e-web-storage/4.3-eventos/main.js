@@ -12,26 +12,39 @@ firstLi.classList.remove('tech');
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando este for clicado.
 
-// const addClassTech = () => 
 
+// const selecionaListas = document.querySelectorAll('[class="container"] li');
 
-const selecionaListas = document.querySelectorAll('[class="container"] li');
+// console.log(selecionaListas);
 
-console.log(selecionaListas);
-
-const pegarLiUnica = () => {
-  selecionaListas.forEach(e => {
-    e.addEventListener('click', (event) => {
-      event.target.classList.add('tech');
-    });
-  });
-};
-
-pegarLiUnica();
-
-
+// const pegarLiUnica = () => {
+//   selecionaListas.forEach(e => {
+//     e.addEventListener('click', (event) => {
+//       event.target.classList.add('tech');
+//     });
+//   });
+// };
 
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como é possível fazer isso? Dica: Lembre-se do método `.classList.remove`.
+
+const selecionaLi = document.querySelector('.container');
+
+selecionaLi.addEventListener('click', (event) => {
+  let elemento = '';
+
+  if (event.target.tagName === 'LI') {
+    event.target.classList.add('tech');
+    elemento = event.target;
+    const selecionaListas = selecionaLi.querySelectorAll('li');
+  
+    selecionaListas.forEach(e => {
+      if (e !== elemento) {
+        e.classList.remove('tech');
+      }
+    })  
+  };
+})
+
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech'.
