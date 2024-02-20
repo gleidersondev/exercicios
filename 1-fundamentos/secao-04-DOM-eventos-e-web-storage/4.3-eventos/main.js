@@ -2,7 +2,7 @@ const firstLi = document.getElementById('first-li');
 const secondLi = document.getElementById('second-li');
 const thirdLi = document.getElementById('third-li');
 const input = document.getElementById('input');
-const myWebpage = document.getElementById('my-spotrybefy');
+const myWebpage = document.getElementById('my-creative-code');
 
 
 // 1. Copie esse arquivo e edite apenas ele.
@@ -66,8 +66,19 @@ input.addEventListener('input', alteraTextClassTech);
 // redirecione para alguma página.
 // 4.1. Que tal redirecionar para seu portfólio? Dica: Lembre-se dos métodos `window.location.replace` e `window.open`.
 
-// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
-// a cor do mesmo.
+// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 da CreativeCode', altere a cor do mesmo.
+
+const alteraCor = () => {
+  console.log(myWebpage); 
+  myWebpage.style.color = '#a020f0';
+};
+
+const corInicial = () => {
+  myWebpage.style.color = 'inherit';
+};
+
+myWebpage.addEventListener('mouseover', alteraCor);
+myWebpage.addEventListener('mouseout', corInicial );
 
 // Segue abaixo um exemplo de uso do event.target.
 
