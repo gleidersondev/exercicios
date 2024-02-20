@@ -40,6 +40,7 @@ selecionaLi.addEventListener('click', (event) => {
     selecionaListas.forEach(e => {
       if (e !== elemento) {
         e.classList.remove('tech');
+        input.value = '';
       }
     })  
   };
@@ -73,7 +74,6 @@ myWebpage.addEventListener('dblclick', redirecionarPagina);
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 da CreativeCode', altere a cor do mesmo.
 
 const alteraCor = () => {
-  console.log(myWebpage); 
   myWebpage.style.color = '#a020f0';
 };
 
