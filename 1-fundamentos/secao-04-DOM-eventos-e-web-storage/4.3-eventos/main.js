@@ -45,7 +45,6 @@ selecionaLi.addEventListener('click', (event) => {
   };
 })
 
-
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento com a classe 'tech'.
 
 const verificaClassTech = document.querySelector('.container');
@@ -62,9 +61,14 @@ const alteraTextClassTech = (event) => {
 
 input.addEventListener('input', alteraTextClassTech);
 
-// 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy',
-// redirecione para alguma página.
+// 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do CreativeCode', redirecione para alguma página.
 // 4.1. Que tal redirecionar para seu portfólio? Dica: Lembre-se dos métodos `window.location.replace` e `window.open`.
+
+const redirecionarPagina = () => {
+  window.open('https://github.com/gleidersondev', '_blank')
+};
+
+myWebpage.addEventListener('dblclick', redirecionarPagina);
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 da CreativeCode', altere a cor do mesmo.
 
