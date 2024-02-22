@@ -18,7 +18,7 @@ h1 {
   width: 100%;
   color: red;
   background-color: rgb(17, 17, 17);
-  -webkit-text-stroke: 1px rgb(192, 33, 33);
+  -webkit-text-stroke: 1px rgb(255, 36, 36);
 }
 
 #start-race {
