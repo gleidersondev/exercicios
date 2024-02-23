@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#header-content, h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header-content {
+  flex-wrap: wrap;
+}
+
+h1 {
+  height: 80px;
+  width: 100%;
+  color: red;
+  background-color: rgb(17, 17, 17);
+  -webkit-text-stroke: 1px rgb(255, 36, 36);
+}
+
+#start-race {
+  margin: 10px 0;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+#car-section {
+  position: relative;
+  padding: 20px 0;
+  height: 170px;
+  background-color: aqua;
+}
+
+#car-section {
+  display: flex;
+  align-items: center;
+}
+
+/* #cars {
+  justify-content: start;
+} */
+
+
+#car1 {
+  height: 100px; 
+  width: 100px;
+  background-color: blue;
+  background-image: url(./img/f1.png);
+  background-size: cover;
+  margin-bottom: 10px;
+}
+
+#car2 {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  background-image: url(./img/f2.png);
+  background-size: cover;
+}
+
+#finish {
+  height: 210px;
+  left: calc(100vw - 100px);
+  position: absolute;
+}
+
+#finish-line {
+  height: 210px;
+  width: 16px;
+  background-image: url(./img/fim.png);
+  background-size: cover;
+}
