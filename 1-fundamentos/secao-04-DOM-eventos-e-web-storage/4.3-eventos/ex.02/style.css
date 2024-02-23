@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-#header-content, h1, #car-section {
+#header-content, h1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,8 +35,13 @@ h1 {
   background-color: aqua;
 }
 
+#car-section {
+  display: flex;
+  align-items: center;
+}
+
 /* #cars {
-  width: ;
+  justify-content: start;
 } */
 
 
