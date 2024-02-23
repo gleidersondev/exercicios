@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-#header-content, h1 {
+#header-content, h1, #car-section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,8 +29,15 @@ h1 {
 }
 
 #car-section {
+  position: relative;
   padding: 20px 0;
+  height: 170px;
+  background-color: aqua;
 }
+
+/* #cars {
+  width: ;
+} */
 
 
 #car1 {
@@ -47,5 +54,18 @@ h1 {
   width: 100px;
   background-color: red;
   background-image: url(./img/f2.png);
+  background-size: cover;
+}
+
+#finish {
+  height: 210px;
+  left: calc(100vw - 100px);
+  position: absolute;
+}
+
+#finish-line {
+  height: 210px;
+  width: 16px;
+  background-image: url(./img/fim.png);
   background-size: cover;
 }
