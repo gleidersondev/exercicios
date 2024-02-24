@@ -32,7 +32,11 @@ h1 {
   position: relative;
   padding: 20px 0;
   height: 170px;
-  background-color: aqua;
+  /* background-color: #3D3D3D; */
+  background-image: url(./img/asfalto.jpg);
+  background-size: contain;
+  /* background-position: center;
+  background-repeat: no-repea; */
 }
 
 #car-section {
@@ -46,31 +50,33 @@ h1 {
 
 
 #car1 {
-  height: 100px; 
-  width: 100px;
-  background-color: blue;
-  background-image: url(./img/f1.png);
-  background-size: cover;
+  background-image: url(./img/vermelho.png);
   margin-bottom: 10px;
 }
 
 #car2 {
+  background-image: url(./img/azul.png);
+}
+
+#car1, #car2 {
   height: 100px;
-  width: 100px;
-  background-color: red;
-  background-image: url(./img/f2.png);
-  background-size: cover;
+  width: 150px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #finish {
   height: 210px;
-  left: calc(100vw - 100px);
+  left: calc(100vw - 230px);
   position: absolute;
 }
 
 #finish-line {
   height: 210px;
-  width: 16px;
+  width: 80px;
   background-image: url(./img/fim.png);
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
