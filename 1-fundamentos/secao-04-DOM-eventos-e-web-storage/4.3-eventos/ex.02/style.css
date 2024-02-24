@@ -34,6 +34,17 @@ h1 {
   height: 170px;
   background-image: url(./img/asfalto.jpg);
   background-size: contain;
+  background-repeat: repeat-x; /* Repetir a imagem de fundo horizontalmente */
+  animation: moverEstrada 5s linear infinite; /* Animar a posição da estrada */
+}
+
+@keyframes moverEstrada {
+  from {
+    background-position: right; /* Posição inicial da imagem de fundo (à esquerda) */
+  }
+  to {
+    background-position: left; /* Posição final da imagem de fundo (à direita) */
+  }
 }
 
 #car-section {
