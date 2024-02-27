@@ -42,13 +42,16 @@ const initialMusic = () => {
   }
 };
 
-initialMusic();
+// initialMusic();
 
 btnStartRace.addEventListener('click', moveRoad);
 
 const checkLoadedPage = () => pageLoading = true;
 
-window.onload = checkLoadedPage;
+window.onload = function () {
+  checkLoadedPage(),
+  initialMusic()
+}
 
 
 
