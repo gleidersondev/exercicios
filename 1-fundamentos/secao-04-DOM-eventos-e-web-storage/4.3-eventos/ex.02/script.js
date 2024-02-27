@@ -3,6 +3,7 @@ const carSection = document.getElementById('car-section');
 const finish = document.getElementById('finish');
 
 let inMotion = false; // em movimento
+let musicPaused = false;
 
 // criando um elemento de áudio e adicionando no final do elemento id = finish
 const elementAudio = document.createElement('audio');
@@ -22,13 +23,18 @@ const moveRoad = () => {
     carSection.style.animation = 'moverEstrada 5s linear infinite';
     inMotion = true;
     btnStartRace.textContent = "Pause";
-    gamePlayMusic();
+    
+    if (!musicPaused) {
+      gamePlayMusic();
+    }
+    
   } else {
     inMotion = false;
     carSection.style.removeProperty('backgroundRepeat');
     carSection.style.removeProperty('animation');
     btnStartRace.textContent = "Continue";
     elementAudio.pause();
+    musicPaused = true;
   }
 };
 
