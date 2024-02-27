@@ -12,11 +12,13 @@ finish.insertAdjacentElement('afterend', elementAudio);
 
 // tocar música do jogo iniciado
 const gamePlayMusic = () => {
-  const audio = new Audio('./songs/game-play-music.mp3');
-  audio.play();
+  // const audio = new Audio('./songs/game-play-music.mp3');
+  // audio.play();
+  elementAudio.src = './songs/game-play-music.mp3';
+  elementAudio.play();
 };
 
-// mover estrada
+// mover estrada/iniciar jogo
 const moveRoad = () => {
   if (!inMotion) {
     carSection.style.backgroundRepeat = 'repeat-x';
@@ -35,14 +37,12 @@ const moveRoad = () => {
 // tocar música inicial
 const initialMusic = () => {
   if (pageLoading) {
-
-    
+    elementAudio.src = './songs/initial-music.mp3';
+    elementAudio.play();
   }
-  const audio = new Audio('./songs/initial-music.mp3');
-  audio.play();
-  audioElement = audio;
-  console.log(audio);
 };
+
+initialMusic();
 
 btnStartRace.addEventListener('click', moveRoad);
 
