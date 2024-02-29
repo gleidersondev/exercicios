@@ -2,6 +2,7 @@ const btnStartRace = document.getElementById('start-race');
 const carSection = document.getElementById('car-section');
 const finish = document.getElementById('finish');
 const elementHtml = document.querySelector('html');
+const headerContent = document.getElementById('header-content');
 
 let inMotion = false; // em movimento
 let musicPaused = false;
@@ -57,6 +58,6 @@ btnStartRace.addEventListener('click', moveRoad);
 // evento de ao mover o mouse sobre o body tocar a música inicial
 elementHtml.addEventListener('mouseenter', initialMusic);
 
-
+// lógica para mover o carro 
 
 
