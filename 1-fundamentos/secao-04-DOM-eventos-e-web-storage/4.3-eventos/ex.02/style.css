@@ -25,12 +25,20 @@ h1 {
   -webkit-text-stroke: 1px rgb(255, 36, 36);
 }
 
-#start-race {
+
+
+.play-game {
   margin: 10px 0;
   width: 200px;
   height: 40px;
   border-radius: 5px;
 }
+
+#start-race {
+  margin-right: 30px;
+}
+
+
 
 #car-section {
   position: relative;
