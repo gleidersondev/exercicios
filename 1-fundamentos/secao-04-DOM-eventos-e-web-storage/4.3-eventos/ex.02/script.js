@@ -3,10 +3,12 @@ const carSection = document.getElementById('car-section');
 const finish = document.getElementById('finish');
 const elementHtml = document.querySelector('html');
 const headerContent = document.getElementById('header-content');
+// const playGame = document.querySelectorAll('.play-game');
 
 let inMotion = false; // em movimento
 let musicPaused = false;
 let playInitialMusic = false;
+let btnClassPlayGame = 0;
 
 // criando um elemento de áudio e adicionando no final do elemento id = finish
 const elementAudio = document.createElement('audio');
@@ -32,6 +34,10 @@ const moveRoad = () => {
     } else {
       elementAudio.play();
     };
+
+    if (inMotion && btnClassPlayGame <= 1) {
+      carAdvance()
+    }
     
   } else {
     inMotion = false;
@@ -60,4 +66,15 @@ elementHtml.addEventListener('mouseenter', initialMusic);
 
 // lógica para mover o carro 
 
+const carAdvance = () => {
+  const btnAdvance = document.createElement('button');
+  btnAdvance.classList.add('play-game');
+  headerContent.appendChild(btnAdvance);
+  const playGame = document.querySelectorAll('.play-game');
+  btnClassPlayGame = playGame.length;
+  btnAdvance.textContent = 'Avançar';
+};
 
+
+
+// continuar logica do botão , ele esta criando varios
