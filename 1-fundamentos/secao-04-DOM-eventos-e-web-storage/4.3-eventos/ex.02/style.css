@@ -4,7 +4,6 @@
 }
 
 #center {
-  
   align-items: center;
 }
 
@@ -39,7 +38,8 @@ h1 {
   height: 170px;
   background-image: url(./img/asfalto.jpg);
   background-size: contain;
-
+  display: flex;
+  align-items: center;
 }
 
 @keyframes moverEstrada {
@@ -49,11 +49,6 @@ h1 {
   to {
     background-position: left; /* Posição final da imagem de fundo (à direita) */
   }
-}
-
-#car-section {
-  display: flex;
-  align-items: center;
 }
 
 #car1 {
