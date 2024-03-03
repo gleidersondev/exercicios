@@ -3,7 +3,6 @@ const carSection = document.getElementById('car-section');
 const finish = document.getElementById('finish');
 const elementHtml = document.querySelector('html');
 const headerContent = document.getElementById('header-content');
-// const playGame = document.querySelectorAll('.play-game');
 
 let inMotion = false; // em movimento
 let musicPaused = false;
@@ -64,8 +63,10 @@ btnStartRace.addEventListener('click', moveRoad);
 // evento de ao mover o mouse sobre o body tocar a música inicial
 elementHtml.addEventListener('mouseenter', initialMusic);
 
-// lógica para mover o carro 
 
+// lógica para mover o carro:
+
+// Cria botão avançar
 const carAdvance = () => {
   const btnAdvance = document.createElement('button');
   btnAdvance.classList.add('play-game');
@@ -75,6 +76,32 @@ const carAdvance = () => {
   btnAdvance.textContent = 'Avançar';
 };
 
+// Movimentando carrinho
+const car1 = document.getElementById('car1');
+const car2 = document.getElementById('car2');
 
+// const btnAdvance = document.querySelectorAll('.play-game')[1];
+// console.log(btnAdvance);
 
-// continuar logica do botão , ele esta criando varios
+const advanceCar = (event) => {
+  const contem = event.target;
+
+  if (contem.innerText === 'Avançar') {
+    // console.log('entrei no if');
+    const pixel = parseInt(car1.style.marginLeft);
+    car1.style.marginLeft = (!isNaN(pixel) ? pixel: 0) + Math.ceil(Math.random() * 20) + 'px';
+
+    // const pixel = (parseInt(isNaN(car1.style.marginLeft) ? car1.style.marginLeft: 0) + Math.ceil(Math.random() * 6)) + 'px';
+    // console.log(pixel);
+  } else {
+    console.log('não foi ele');
+  }
+
+//   if (event.target) {
+    
+//   }
+
+  // console.log(contem.innerText);
+};
+
+document.body.addEventListener('click', advanceCar);
