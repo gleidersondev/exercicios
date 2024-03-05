@@ -90,6 +90,7 @@ const advanceCar = (event) => {
     // console.log('entrei no if');
     const pixel = parseInt(car1.style.marginLeft);
     car1.style.marginLeft = (!isNaN(pixel) ? pixel: 0) + Math.ceil(Math.random() * 20) + 'px';
+    car2.style.marginLeft = (!isNaN(pixel) ? pixel: 0) + Math.ceil(Math.random() * 20) + 'px';
 
     // const pixel = (parseInt(isNaN(car1.style.marginLeft) ? car1.style.marginLeft: 0) + Math.ceil(Math.random() * 6)) + 'px';
     // console.log(pixel);

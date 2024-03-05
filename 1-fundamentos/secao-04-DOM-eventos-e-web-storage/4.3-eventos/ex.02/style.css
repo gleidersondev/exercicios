@@ -55,6 +55,11 @@ h1 {
   }
 }
 
+#cars {
+  position: absolute;
+  z-index: 1;
+}
+
 #car1 {
   background-image: url(./img/vermelho.png);
   margin-bottom: 10px;
@@ -76,6 +81,7 @@ h1 {
   height: 210px;
   left: calc(100vw - 230px);
   position: absolute;
+  z-index: 0;
 }
 
 #finish-line {
