@@ -83,28 +83,32 @@ const car2 = document.getElementById('car2');
 const advanceCar = (event) => {
   const contem = event.target;
   const pixel = isNaN(parseInt(car1.style.marginLeft)) ? '0' : parseInt(car1.style.marginLeft); //defineo valor inicial da margem em um número inteiro
-  const screenWidth = (window.innerWidth - 230); //retorna o número que se refere ao limite que o carro deve chegar
+  console.log('Valor de pixel inicial', pixel);
+  const screenWidth = (window.innerWidth - 310); //retorna o número que se refere ao limite que o carro deve chegar
 
-  console.log(screenWidth);
+  console.log('Valor da chegada', screenWidth);
 
   if (contem.innerText === 'Avançar') {
-    const pixelRandom1 = pixel + Math.ceil(Math.random() * 20);
-    const pixelRandom2 = pixel + Math.ceil(Math.random() * 20);
+    const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
+    const pixelRandom2 = pixel + Math.ceil(Math.random() * 100);
 
-    if (pixelRandom1 < screenWidth) {
-      console.log('vermelho', pixelRandom1 < screenWidth);
+    if ((pixelRandom1 + 57)< screenWidth) {
+      // console.log('Carrinho vermelho moveu', pixelRandom1 + 150);
       car1.style.marginLeft = pixelRandom1 + 'px';
-      console.log('vermelho', car1.style.marginLeft = pixelRandom1 + 'px');
+      console.log('Carrinho vermelho moveu', car1.style.marginLeft)
+
     } else {
       alert('Carrinho vermelho ganhou!!!')
+      console.log('Final vermelho', car1.style.marginLeft = pixelRandom1 + 'px');
     };
 
-    if (pixelRandom2 < screenWidth) {
-      console.log('azul', pixelRandom2 < screenWidth);
+    if ((pixelRandom2 + 57) < screenWidth) {
+      // console.log('Carrinho azul moveu', pixelRandom2 + 150);
       car2.style.marginLeft = pixelRandom2 + 'px';
-      console.log('azul,', car2.style.marginLeft = pixelRandom2 + 'px');
+      console.log('Carrinho azul moveu', car2.style.marginLeft);
     } else {
       alert('Carrinho azul ganhou!!!')
+      console.log('Final azul,', car2.style.marginLeft = pixelRandom2 + 'px');
     };
   };
 
