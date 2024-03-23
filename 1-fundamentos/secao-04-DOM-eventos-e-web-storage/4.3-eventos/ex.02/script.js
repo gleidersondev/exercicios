@@ -20,6 +20,12 @@ const gamePlayMusic = () => {
   elementAudio.play();
 };
 
+// tocar música do vencedor
+const winnerSong = () => {
+  elementAudio.src = './songs/racing-winner.mp3';
+  elementAudio.play();
+};
+
 // mover estrada/iniciar jogo
 const moveRoad = () => {
   if (!inMotion) {
@@ -86,31 +92,36 @@ const advanceCar = (event) => {
   //defineo valor inicial da margem em um número inteiro
   const pixel = isNaN(parseInt(car1.style.marginLeft)) ? 0 : parseInt(car1.style.marginLeft);
   const pixel2 = isNaN(parseInt(car2.style.marginLeft)) ? 0 : parseInt(car2.style.marginLeft);
-  console.log('Valor de pixel inicial', pixel);
-  
+
   //retorna o número que se refere ao limite que o carro deve chegar
   const screenWidth = (window.innerWidth - 310);
-  console.log('Valor da chegada', screenWidth);
 
-  if (contem.innerText === 'Avançar') {
+  if (contem.innerText === 'Avançar' && btnStartRace.textContent === 'Pause') {
     const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
     const pixelRandom2 = pixel2 + Math.ceil(Math.random() * 100);
 
     car1.style.marginLeft = pixelRandom1 + 'px';
     car2.style.marginLeft = pixelRandom2 + 'px';
 
-    if ((pixelRandom1 + 59) >= screenWidth) {
-      alert('Carrinho vermelho ganhou!!!');
-      console.log(`if do carrinho vermelho, valor ${pixelRandom1 + 59}`);
-    } else if ((pixelRandom2 + 59) >= screenWidth) {
-      alert('Carrinho Azul Ganhou!!!');
-      console.log(`if do carrinho azul, valor ${pixelRandom2 + 59}`)
-    } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
-      alert('Empate!!!');
-    }
+
+    setTimeout(function() {
+      if ((pixelRandom1 + 59) >= screenWidth) {
+        winnerSong();
+        alert('Carrinho Vermelho Ganhou!!!');
+      } else if ((pixelRandom2 + 59) >= screenWidth) {
+        winnerSong();
+        alert('Carrinho Azul Ganhou!!!');
+      } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
+        winnerSong();
+        alert('Empate!!!');
+      }
+      
+    }, 100)
 
   };
 
 };
 
 document.body.addEventListener('click', advanceCar);
+
+// falta implementar lógica para jogo não continuar quando algum carro não tiver ganho e também lógica para jogo reiniciar
