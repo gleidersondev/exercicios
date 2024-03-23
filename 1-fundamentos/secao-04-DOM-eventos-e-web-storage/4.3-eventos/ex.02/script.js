@@ -82,23 +82,27 @@ const car2 = document.getElementById('car2');
 
 const advanceCar = (event) => {
   const contem = event.target;
-  const pixel = isNaN(parseInt(car1.style.marginLeft)) ? '0' : parseInt(car1.style.marginLeft); //defineo valor inicial da margem em um número inteiro
-  console.log('Valor de pixel inicial', pixel);
-  const screenWidth = (window.innerWidth - 310); //retorna o número que se refere ao limite que o carro deve chegar
 
+  //defineo valor inicial da margem em um número inteiro
+  const pixel = isNaN(parseInt(car1.style.marginLeft)) ? '0' : parseInt(car1.style.marginLeft);
+  const pixel2 = isNaN(parseInt(car2.style.marginLeft)) ? '0' : parseInt(car2.style.marginLeft);
+  console.log('Valor de pixel inicial', pixel);
+  
+  //retorna o número que se refere ao limite que o carro deve chegar
+  const screenWidth = (window.innerWidth - 310);
   console.log('Valor da chegada', screenWidth);
 
   if (contem.innerText === 'Avançar') {
     const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
-    const pixelRandom2 = pixel + Math.ceil(Math.random() * 100);
+    const pixelRandom2 = pixel2 + Math.ceil(Math.random() * 100);
 
-    if ((pixelRandom1 + 57)< screenWidth) {
+    if ((pixelRandom1 + 57) < screenWidth) {
       // console.log('Carrinho vermelho moveu', pixelRandom1 + 150);
       car1.style.marginLeft = pixelRandom1 + 'px';
       console.log('Carrinho vermelho moveu', car1.style.marginLeft)
 
     } else {
-      alert('Carrinho vermelho ganhou!!!'), 5000;
+      alert('Carrinho vermelho ganhou!!!');
       console.log('Final vermelho', car1.style.marginLeft = pixelRandom1 + 'px');
     };
 
@@ -107,7 +111,7 @@ const advanceCar = (event) => {
       car2.style.marginLeft = pixelRandom2 + 'px';
       console.log('Carrinho azul moveu', car2.style.marginLeft);
     } else {
-      alert('Carrinho azul ganhou!!!'), 5000;
+      alert('Carrinho azul ganhou!!!');
       console.log('Final azul,', car2.style.marginLeft = pixelRandom2 + 'px');
     };
   };
