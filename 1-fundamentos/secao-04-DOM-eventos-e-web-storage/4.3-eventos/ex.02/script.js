@@ -123,3 +123,5 @@ const advanceCar = (event) => {
 };
 
 document.body.addEventListener('click', advanceCar);
+
+// falta implementar lógica para jogo não continuar quando algum carro não tiver ganho e também lógica para jogo reiniciar
