@@ -98,7 +98,7 @@ const advanceCar = (event) => {
       console.log('Carrinho vermelho moveu', car1.style.marginLeft)
 
     } else {
-      setTimeout(alert('Carrinho vermelho ganhou!!!'), 3000)
+      alert('Carrinho vermelho ganhou!!!'), 5000;
       console.log('Final vermelho', car1.style.marginLeft = pixelRandom1 + 'px');
     };
 
@@ -107,7 +107,7 @@ const advanceCar = (event) => {
       car2.style.marginLeft = pixelRandom2 + 'px';
       console.log('Carrinho azul moveu', car2.style.marginLeft);
     } else {
-      setTimeout(alert('Carrinho azul ganhou!!!'), 3000)
+      alert('Carrinho azul ganhou!!!'), 5000;
       console.log('Final azul,', car2.style.marginLeft = pixelRandom2 + 'px');
     };
   };
