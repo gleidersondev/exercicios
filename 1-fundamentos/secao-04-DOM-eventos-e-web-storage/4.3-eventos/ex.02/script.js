@@ -96,26 +96,19 @@ const advanceCar = (event) => {
     const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
     const pixelRandom2 = pixel2 + Math.ceil(Math.random() * 100);
 
-    if ((pixelRandom1 + 59) < screenWidth) {
-      // console.log('Carrinho vermelho moveu', pixelRandom1 + 150);
-      car1.style.marginLeft = pixelRandom1 + 'px';
-      console.log('Carrinho vermelho moveu', car1.style.marginLeft)
+    car1.style.marginLeft = pixelRandom1 + 'px';
+    car2.style.marginLeft = pixelRandom2 + 'px';
 
-    } 
-    // else {
-    //   alert('Carrinho vermelho ganhou!!!');
-    //   console.log('Final vermelho', car1.style.marginLeft = pixelRandom1 + 'px');
-    // };
-
-    if ((pixelRandom2 + 59) < screenWidth) {
-      // console.log('Carrinho azul moveu', pixelRandom2 + 150);
-      car2.style.marginLeft = pixelRandom2 + 'px';
-      console.log('Carrinho azul moveu', car2.style.marginLeft);
-    } 
-    // else {
-    //   alert('Carrinho azul ganhou!!!');
-    //   console.log('Final azul,', car2.style.marginLeft = pixelRandom2 + 'px');
-    // };
+    if ((pixelRandom1 + 59) >= screenWidth) {
+      alert('Carrinho vermelho ganhou!!!');
+      console.log(`if do carrinho vermelho, valor ${pixelRandom1 + 59}`);
+    } else if ((pixelRandom2 + 59) >= screenWidth) {
+      alert('Carrinho Azul Ganhou!!!');
+      console.log(`if do carrinho azul, valor ${pixelRandom2 + 59}`)
+    } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
+      alert('Empate!!!');
+    }
+    
   };
 
 };
