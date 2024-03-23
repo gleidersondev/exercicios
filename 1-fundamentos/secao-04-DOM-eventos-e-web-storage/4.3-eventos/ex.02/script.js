@@ -96,24 +96,26 @@ const advanceCar = (event) => {
     const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
     const pixelRandom2 = pixel2 + Math.ceil(Math.random() * 100);
 
-    if ((pixelRandom1 + 57) < screenWidth) {
+    if ((pixelRandom1 + 59) < screenWidth) {
       // console.log('Carrinho vermelho moveu', pixelRandom1 + 150);
       car1.style.marginLeft = pixelRandom1 + 'px';
       console.log('Carrinho vermelho moveu', car1.style.marginLeft)
 
-    } else {
-      alert('Carrinho vermelho ganhou!!!');
-      console.log('Final vermelho', car1.style.marginLeft = pixelRandom1 + 'px');
-    };
+    } 
+    // else {
+    //   alert('Carrinho vermelho ganhou!!!');
+    //   console.log('Final vermelho', car1.style.marginLeft = pixelRandom1 + 'px');
+    // };
 
-    if ((pixelRandom2 + 57) < screenWidth) {
+    if ((pixelRandom2 + 59) < screenWidth) {
       // console.log('Carrinho azul moveu', pixelRandom2 + 150);
       car2.style.marginLeft = pixelRandom2 + 'px';
       console.log('Carrinho azul moveu', car2.style.marginLeft);
-    } else {
-      alert('Carrinho azul ganhou!!!');
-      console.log('Final azul,', car2.style.marginLeft = pixelRandom2 + 'px');
-    };
+    } 
+    // else {
+    //   alert('Carrinho azul ganhou!!!');
+    //   console.log('Final azul,', car2.style.marginLeft = pixelRandom2 + 'px');
+    // };
   };
 
 };
