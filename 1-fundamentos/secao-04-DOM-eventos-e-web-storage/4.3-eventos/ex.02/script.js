@@ -20,6 +20,12 @@ const gamePlayMusic = () => {
   elementAudio.play();
 };
 
+// tocar música do vencedor
+const winnerSong = () => {
+  elementAudio.src = './songs/racing-winner.mp3';
+  elementAudio.play();
+};
+
 // mover estrada/iniciar jogo
 const moveRoad = () => {
   if (!inMotion) {
@@ -90,19 +96,27 @@ const advanceCar = (event) => {
   //retorna o número que se refere ao limite que o carro deve chegar
   const screenWidth = (window.innerWidth - 310);
 
-  if (contem.innerText === 'Avançar') {
+  if (contem.innerText === 'Avançar' && btnStartRace.textContent === 'Pause') {
     const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
     const pixelRandom2 = pixel2 + Math.ceil(Math.random() * 100);
 
     car1.style.marginLeft = pixelRandom1 + 'px';
     car2.style.marginLeft = pixelRandom2 + 'px';
 
-    if ((pixelRandom1 + 59) >= screenWidth) {
-    } else if ((pixelRandom2 + 59) >= screenWidth) {
-      alert('Carrinho Azul Ganhou!!!');
-    } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
-      alert('Empate!!!');
-    }
+
+    setTimeout(function() {
+      if ((pixelRandom1 + 59) >= screenWidth) {
+        winnerSong();
+        alert('Carrinho Vermelho Ganhou!!!');
+      } else if ((pixelRandom2 + 59) >= screenWidth) {
+        winnerSong();
+        alert('Carrinho Azul Ganhou!!!');
+      } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
+        winnerSong();
+        alert('Empate!!!');
+      }
+      
+    }, 100)
 
   };
 
