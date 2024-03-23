@@ -84,8 +84,8 @@ const advanceCar = (event) => {
   const contem = event.target;
 
   //defineo valor inicial da margem em um número inteiro
-  const pixel = isNaN(parseInt(car1.style.marginLeft)) ? '0' : parseInt(car1.style.marginLeft);
-  const pixel2 = isNaN(parseInt(car2.style.marginLeft)) ? '0' : parseInt(car2.style.marginLeft);
+  const pixel = isNaN(parseInt(car1.style.marginLeft)) ? 0 : parseInt(car1.style.marginLeft);
+  const pixel2 = isNaN(parseInt(car2.style.marginLeft)) ? 0 : parseInt(car2.style.marginLeft);
   console.log('Valor de pixel inicial', pixel);
   
   //retorna o número que se refere ao limite que o carro deve chegar
@@ -108,7 +108,7 @@ const advanceCar = (event) => {
     } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
       alert('Empate!!!');
     }
-    
+
   };
 
 };
