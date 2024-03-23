@@ -80,57 +80,37 @@ const carAdvance = () => {
 const car1 = document.getElementById('car1');
 const car2 = document.getElementById('car2');
 
-// const btnAdvance = document.querySelectorAll('.play-game')[1];
-// console.log(btnAdvance);
-
-console.log(window.innerWidth);
-
 const advanceCar = (event) => {
   const contem = event.target;
-  // const pixel = isNaN(car1.style.marginLeft) ? '0' : car1.style.marginLeft;
-  const pixel = isNaN(parseInt(car1.style.marginLeft)) ? '0' : parseInt(car1.style.marginLeft);
-  const screenWidth = (window.innerWidth - 230) + 'px';
 
-  // console.log('Valor de pixel', pixel);
- 
+  //defineo valor inicial da margem em um número inteiro
+  const pixel = isNaN(parseInt(car1.style.marginLeft)) ? 0 : parseInt(car1.style.marginLeft);
+  const pixel2 = isNaN(parseInt(car2.style.marginLeft)) ? 0 : parseInt(car2.style.marginLeft);
+  console.log('Valor de pixel inicial', pixel);
+  
+  //retorna o número que se refere ao limite que o carro deve chegar
+  const screenWidth = (window.innerWidth - 310);
+  console.log('Valor da chegada', screenWidth);
 
   if (contem.innerText === 'Avançar') {
-    // console.log('entrei no if');
+    const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
+    const pixelRandom2 = pixel2 + Math.ceil(Math.random() * 100);
 
-    const pixelRandom1 = pixel + Math.ceil(Math.random() * 20) + 'px';
-    const pixelRandom2 = pixel + Math.ceil(Math.random() * 20) + 'px';
+    car1.style.marginLeft = pixelRandom1 + 'px';
+    car2.style.marginLeft = pixelRandom2 + 'px';
 
-    console.log('Valor da chegada', screenWidth);
-    console.log('random1', pixelRandom1);
-    console.log('random2', pixelRandom2);
+    if ((pixelRandom1 + 59) >= screenWidth) {
+      alert('Carrinho vermelho ganhou!!!');
+      console.log(`if do carrinho vermelho, valor ${pixelRandom1 + 59}`);
+    } else if ((pixelRandom2 + 59) >= screenWidth) {
+      alert('Carrinho Azul Ganhou!!!');
+      console.log(`if do carrinho azul, valor ${pixelRandom2 + 59}`)
+    } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
+      alert('Empate!!!');
+    }
 
-    if (pixelRandom1 < screenWidth) {
-      car1.style.marginLeft = pixelRandom1;
-    } else {
-      alert('Carrinho vermelho ganhou!!!')
-    };
-
-    if (pixelRandom2 < screenWidth) {
-      car1.style.marginLeft = pixelRandom2;
-    } else {
-      alert('Carrinho azul ganhou!!!')
-    };
-
-    // car1.style.marginLeft = 
-    // car2.style.marginLeft = 
-    
-    // car1.style.marginLeft = (!isNaN(pixel) ? pixel: 0) + Math.ceil(Math.random() * 20) + 'px';
-    // car2.style.marginLeft = (!isNaN(pixel) ? pixel: 0) + Math.ceil(Math.random() * 20) + 'px';
-
-    // const pixel = (parseInt(isNaN(car1.style.marginLeft) ? car1.style.marginLeft: 0) + Math.ceil(Math.random() * 6)) + 'px';
-    // console.log(pixel);
   };
 
-//   if (event.target) {
-    
-//   }
-
-  // console.log(contem.innerText);
 };
 
 document.body.addEventListener('click', advanceCar);
