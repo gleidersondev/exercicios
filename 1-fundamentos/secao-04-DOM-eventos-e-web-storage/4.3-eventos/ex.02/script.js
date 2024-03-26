@@ -86,6 +86,15 @@ const carAdvance = () => {
 const car1 = document.getElementById('car1');
 const car2 = document.getElementById('car2');
 
+setTimeout(function () {
+  const beginningOfTheGame = () => {
+    car1.style.marginLeft = 0;
+    car2.style.marginLeft = 0;
+  };
+  
+},200);
+
+
 const advanceCar = (event) => {
   const contem = event.target;
 
@@ -108,12 +117,15 @@ const advanceCar = (event) => {
       if ((pixelRandom1 + 59) >= screenWidth) {
         winnerSong();
         alert('Carrinho Vermelho Ganhou!!!');
+        beginningOfTheGame();
       } else if ((pixelRandom2 + 59) >= screenWidth) {
         winnerSong();
         alert('Carrinho Azul Ganhou!!!');
+        beginningOfTheGame();
       } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
         winnerSong();
         alert('Empate!!!');
+        beginningOfTheGame();
       }
       
     }, 100)
