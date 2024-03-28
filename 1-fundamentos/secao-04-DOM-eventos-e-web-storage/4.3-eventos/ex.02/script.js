@@ -102,7 +102,6 @@ const newGame = () => {
     inMotion = false;
     car1.style.marginLeft = 0;
     car2.style.marginLeft = 0;
-    moveRoad();
   };
 }
 
