@@ -9,6 +9,11 @@ let musicPaused = false;
 let playInitialMusic = false;
 let btnClassPlayGame = 0;
 
+console.log(inMotion);
+console.log(musicPaused);
+console.log(playInitialMusic);
+console.log(btnClassPlayGame);
+
 // criando um elemento de áudio e adicionando no final do elemento id = finish
 const elementAudio = document.createElement('audio');
 finish.insertAdjacentElement('afterend', elementAudio);
@@ -45,12 +50,14 @@ const moveRoad = () => {
     }
     
   } else {
-    inMotion = false;
-    carSection.style.removeProperty('backgroundRepeat');
-    carSection.style.removeProperty('animation');
-    btnStartRace.textContent = "Continue";
-    elementAudio.pause();
-    musicPaused = true;
+    if (btnStartRace.textContent != 'Novo Jogo') {
+      inMotion = false;
+      carSection.style.removeProperty('backgroundRepeat');
+      carSection.style.removeProperty('animation');
+      btnStartRace.textContent = "Continue";
+      elementAudio.pause();
+      musicPaused = true;
+    }
   }
 };
 
@@ -80,20 +87,27 @@ const carAdvance = () => {
   const playGame = document.querySelectorAll('.play-game');
   btnClassPlayGame = playGame.length;
   btnAdvance.textContent = 'Avançar';
+  btnAdvance.id = 'advance';
 };
 
 // Movimentando carrinho
 const car1 = document.getElementById('car1');
 const car2 = document.getElementById('car2');
 
-setTimeout(function () {
-  const beginningOfTheGame = () => {
-    car1.style.marginLeft = 0;
-    car2.style.marginLeft = 0;
-  };
-  
-},200);
 
+const beginningOfTheGame = () => {
+  console.log('terminou');
+  document.querySelector('#advance').remove();
+  document.querySelector('#start-race').textContent = 'Novo Jogo';
+  inMotion = false;
+
+
+
+  // setTimeout(function () {
+  //   car1.style.marginLeft = 0;
+  //   car2.style.marginLeft = 0;
+  // }, 300)
+} 
 
 const advanceCar = (event) => {
   const contem = event.target;
