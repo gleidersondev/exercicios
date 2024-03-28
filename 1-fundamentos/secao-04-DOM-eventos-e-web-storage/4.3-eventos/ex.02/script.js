@@ -94,14 +94,23 @@ const carAdvance = () => {
 const car1 = document.getElementById('car1');
 const car2 = document.getElementById('car2');
 
+// Função de novo jogo
+const newGame = () => {
+  const btn = document.querySelector('#start-race');
+  
+  if (btn.textContent === 'Novo Jogo') {
+    inMotion = false;
+    car1.style.marginLeft = 0;
+    car2.style.marginLeft = 0;
+    moveRoad();
+  };
+}
 
+// Removendo botão Avançar após vitória
 const beginningOfTheGame = () => {
   console.log('terminou');
   document.querySelector('#advance').remove();
   document.querySelector('#start-race').textContent = 'Novo Jogo';
-  inMotion = false;
-
-
 
   // setTimeout(function () {
   //   car1.style.marginLeft = 0;
