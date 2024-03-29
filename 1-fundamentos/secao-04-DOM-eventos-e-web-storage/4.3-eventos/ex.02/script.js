@@ -38,6 +38,8 @@ const moveRoad = () => {
     carSection.style.animation = 'moverEstrada 5s linear infinite';
     inMotion = true;
     btnStartRace.textContent = "Pause";
+    console.log('iniciei jogo');
+    console.log(btnClassPlayGame);
     
     if (!musicPaused) {
       gamePlayMusic();
@@ -47,6 +49,7 @@ const moveRoad = () => {
 
     if (inMotion && btnClassPlayGame <= 1) {
       carAdvance()
+      console.log('if:', inMotion && btnClassPlayGame <= 1);
     }
     
   } else {
@@ -57,6 +60,7 @@ const moveRoad = () => {
       btnStartRace.textContent = "Continue";
       elementAudio.pause();
       musicPaused = true;
+      console.log('to no fi: btnStartRace.textContent != Novo Jogo');
     }
   }
 };
@@ -99,10 +103,19 @@ const newGame = () => {
   const btn = document.querySelector('#start-race');
   
   if (btn.textContent === 'Novo Jogo') {
-    inMotion = false;
     car1.style.marginLeft = 0;
     car2.style.marginLeft = 0;
+    carSection.style.backgroundRepeat = '';
+    carSection.style.animation = '';
+    elementAudio.pause();
+    btn.textContent = 'Iniciar Corrida!';
+    console.log(inMotion);
+    inMotion = false;
+    btnClassPlayGame = 0;
+    // carAdvance();
+
   };
+
 }
 
 // Removendo botão Avançar após vitória
