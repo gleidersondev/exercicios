@@ -45,12 +45,14 @@ const moveRoad = () => {
     }
     
   } else {
-    inMotion = false;
-    carSection.style.removeProperty('backgroundRepeat');
-    carSection.style.removeProperty('animation');
-    btnStartRace.textContent = "Continue";
-    elementAudio.pause();
-    musicPaused = true;
+    if (btnStartRace.textContent != 'Novo Jogo') {
+      inMotion = false;
+      carSection.style.removeProperty('backgroundRepeat');
+      carSection.style.removeProperty('animation');
+      btnStartRace.textContent = "Continue";
+      elementAudio.pause();
+      musicPaused = true;
+    }
   }
 };
 
@@ -63,13 +65,6 @@ const initialMusic = () => {
   }
 };
 
-// evento de clicar no botão e iniciar jogo
-btnStartRace.addEventListener('click', moveRoad);
-
-// evento de ao mover o mouse sobre o body tocar a música inicial
-elementHtml.addEventListener('mouseenter', initialMusic);
-
-
 // lógica para mover o carro:
 
 // Cria botão avançar
@@ -80,11 +75,36 @@ const carAdvance = () => {
   const playGame = document.querySelectorAll('.play-game');
   btnClassPlayGame = playGame.length;
   btnAdvance.textContent = 'Avançar';
+  btnAdvance.id = 'advance';
 };
 
 // Movimentando carrinho
 const car1 = document.getElementById('car1');
 const car2 = document.getElementById('car2');
+
+// Função de novo jogo
+const newGame = () => {
+  const btn = document.querySelector('#start-race');
+  
+  if (btn.textContent === 'Novo Jogo') {
+    car1.style.marginLeft = 0;
+    car2.style.marginLeft = 0;
+    carSection.style.backgroundRepeat = '';
+    carSection.style.animation = '';
+    elementAudio.pause();
+    btn.textContent = 'Iniciar Corrida!';
+    console.log(inMotion);
+    inMotion = false;
+    btnClassPlayGame = 0;
+  };
+}
+
+// Removendo botão Avançar após vitória
+const beginningOfTheGame = () => {
+  console.log('terminou');
+  document.querySelector('#advance').remove();
+  document.querySelector('#start-race').textContent = 'Novo Jogo';
+} 
 
 const advanceCar = (event) => {
   const contem = event.target;
@@ -99,21 +119,24 @@ const advanceCar = (event) => {
   if (contem.innerText === 'Avançar' && btnStartRace.textContent === 'Pause') {
     const pixelRandom1 = pixel + Math.ceil(Math.random() * 100);
     const pixelRandom2 = pixel2 + Math.ceil(Math.random() * 100);
-
+    
     car1.style.marginLeft = pixelRandom1 + 'px';
     car2.style.marginLeft = pixelRandom2 + 'px';
-
-
+    
+    
     setTimeout(function() {
       if ((pixelRandom1 + 59) >= screenWidth) {
         winnerSong();
         alert('Carrinho Vermelho Ganhou!!!');
+        beginningOfTheGame();
       } else if ((pixelRandom2 + 59) >= screenWidth) {
         winnerSong();
         alert('Carrinho Azul Ganhou!!!');
+        beginningOfTheGame();
       } else if (((pixelRandom1 + 59) === (pixelRandom2 + 59)) >= screenWidth) {
         winnerSong();
         alert('Empate!!!');
+        beginningOfTheGame();
       }
       
     }, 100)
@@ -122,6 +145,16 @@ const advanceCar = (event) => {
 
 };
 
+// evento de clicar no botão e iniciar jogo
+btnStartRace.addEventListener('click', moveRoad);
+
+// evento de ao mover o mouse sobre o body tocar a música inicial
+elementHtml.addEventListener('mouseenter', initialMusic);
+
+// evento para fazer o carrinho avançar ao clicar no botão
 document.body.addEventListener('click', advanceCar);
 
-// falta implementar lógica para jogo não continuar quando algum carro não tiver ganho e também lógica para jogo reiniciar
+// evento para começar um novo jogo ao apertar botão
+document.querySelector('#start-race').addEventListener('click', newGame);
+
+// falta implementar lógica para a música inicial sempre trocar ao abrir a página e ao iniciar novo jogo
