@@ -1,9 +1,36 @@
-body {
-  background: linear-gradient(45deg, #BBD1D3, #F2DECF);
+/* Geral */
+* {
+  margin: 0;
+  padding: 0; 
+}
+
+#header-content, body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/* header */
+#header-content {
+  width: 100vw;
+  height: 130px;
+  background: linear-gradient(to right, #6AB5C4 70%, #E56369 70%);
+  color: #FFFFFD;
+}
+
+.comic-neue-bold {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 50px;
+}
+
+/* body */
+body {
+  background: linear-gradient(45deg, #BBD1D3, #F2DECF);
+  flex-wrap: wrap;
+}
+
 
 
 
