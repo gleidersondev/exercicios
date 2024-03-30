@@ -4,17 +4,17 @@
   padding: 0; 
 }
 
-#header-content, body {
+#header-content, body, h1 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* header */
-#header-content {
-  width: 100vw;
+h1 {
+  width: 70vw;
   height: 130px;
-  background: linear-gradient(to right, #6AB5C4 70%, #E56369 70%);
+  background: linear-gradient(45deg, #6AB5C4, #BBD1D3);
   color: #FFFFFD;
 }
 
@@ -23,6 +23,12 @@
   font-weight: 700;
   font-style: normal;
   font-size: 50px;
+}
+
+nav {
+  width: 30vw;
+  height: 130px;
+  background: linear-gradient(to right, #d38d91, #E56369);
 }
 
 /* body */
