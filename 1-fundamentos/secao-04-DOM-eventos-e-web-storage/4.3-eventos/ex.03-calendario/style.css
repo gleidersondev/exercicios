@@ -13,7 +13,7 @@
 /* header */
 h1 {
   width: 70vw;
-  height: 130px;
+  height: 120px;
   background: linear-gradient(45deg, #6AB5C4, #BBD1D3);
   color: #FFFFFD;
 }
@@ -27,7 +27,7 @@ h1 {
 
 nav {
   width: 30vw;
-  height: 130px;
+  height: 120px;
   background: linear-gradient(to right, #d38d91, #E56369);
 }
 

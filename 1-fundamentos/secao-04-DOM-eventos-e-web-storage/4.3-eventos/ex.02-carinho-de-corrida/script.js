@@ -7,7 +7,7 @@ const headerContent = document.getElementById('header-content');
 let inMotion = false; // em movimento
 let musicPaused = false;
 let playInitialMusic = false;
-let btnClassPlayGame = 0;
+let btnClassPlayGame = 0;z
 
 // criando um elemento de áudio e adicionando no final do elemento id = finish
 const elementAudio = document.createElement('audio');
