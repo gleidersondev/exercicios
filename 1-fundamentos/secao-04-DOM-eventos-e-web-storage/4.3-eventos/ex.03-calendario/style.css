@@ -4,7 +4,12 @@
   padding: 0; 
 }
 
-#header-content, body, h1 {
+body {
+  background: linear-gradient(45deg, #BBD1D3, #F2DECF);
+  flex-wrap: wrap;
+}
+
+#header-content, body, h1, ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,10 +37,12 @@ nav {
 }
 
 /* calendário principal */
-body {
-  background: linear-gradient(45deg, #BBD1D3, #F2DECF);
-  flex-wrap: wrap;
+
+ul {
+  list-style-type: none;
 }
+
+
 
 
 

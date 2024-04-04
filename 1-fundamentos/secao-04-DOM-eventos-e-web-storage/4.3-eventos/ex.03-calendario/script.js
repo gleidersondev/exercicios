@@ -18,6 +18,8 @@ const populaCalendario = () => {
     let elemento = diasDoMes[i];
     li.innerText = elemento;
     mainCalendar.firstElementChild.appendChild(li);
+    li.classList.add('.day');
+    console.log(li);
   }
 }
 
