@@ -31,11 +31,14 @@ nav {
   background: linear-gradient(to right, #d38d91, #E56369);
 }
 
-/* body */
+/* calendário principal */
 body {
   background: linear-gradient(45deg, #BBD1D3, #F2DECF);
   flex-wrap: wrap;
 }
+
+
+
 
 
 
