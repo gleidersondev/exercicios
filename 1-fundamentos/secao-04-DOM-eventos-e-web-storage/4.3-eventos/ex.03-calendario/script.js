@@ -1,6 +1,5 @@
 const mainCalendar = document.querySelector('#main-calendar');
-console.log('eu');
-console.log(mainCalendar);
+
 // Lógica mural de compromissos (wall-content)
 
 
