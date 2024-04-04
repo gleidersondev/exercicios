@@ -1,0 +1,52 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0; 
+}
+
+body {
+  background: linear-gradient(45deg, #BBD1D3, #F2DECF);
+  flex-wrap: wrap;
+}
+
+#header-content, body, h1, ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* header */
+h1 {
+  width: 70vw;
+  height: 120px;
+  background: linear-gradient(45deg, #6AB5C4, #BBD1D3);
+  color: #FFFFFD;
+}
+
+.comic-neue-bold {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 50px;
+}
+
+nav {
+  width: 30vw;
+  height: 120px;
+  background: linear-gradient(to right, #d38d91, #E56369);
+}
+
+/* calendário principal */
+
+ul {
+  list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
