@@ -1,4 +1,7 @@
+const conteudoCalendario = document.querySelector('#calendar-content');
 const mainCalendar = document.querySelector('#main-calendar');
+const diasDaSemana = document.querySelector('#days-of-the-week');
+
 
 // Lógica mural de compromissos (wall-content)
 
