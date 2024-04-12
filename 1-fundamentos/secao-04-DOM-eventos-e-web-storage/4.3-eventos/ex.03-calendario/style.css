@@ -9,7 +9,7 @@ body {
   flex-wrap: wrap;
 }
 
-#header-content, body, h1, ul {
+#header-content, #calendar-content, body, h1, ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +37,18 @@ nav {
 }
 
 /* calendário principal */
+
+#calendar-content {
+  width: 380px;
+  height: 500px;
+  background-color: aliceblue;
+}
+
+#main-calendar {
+  width: 364px;
+  height: 490px;
+  background-color:rgb(92, 70, 170)
+}
 
 ul {
   list-style-type: none;
