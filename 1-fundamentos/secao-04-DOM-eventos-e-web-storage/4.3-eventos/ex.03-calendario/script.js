@@ -7,7 +7,9 @@ const dataAtual = new Date();
 
 const diasDoMes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
 
 
 // Lógica mural de compromissos (wall-content)
@@ -21,6 +23,12 @@ const mesAtualConteudoCalendario = () => {
 };
 
 mesAtualConteudoCalendario();
+
+const diadeHojeConteudoCalendario = () => {
+  diadeHoje.textContent = diasDaSemana[dataAtual.getDay()];
+}
+
+diadeHojeConteudoCalendario();
 
 
 const ul = document.createElement('ul'); 
