@@ -9,7 +9,7 @@ body {
   flex-wrap: wrap;
 }
 
-#header-content, #calendar-content, body, h1, ul {
+#header-content, #calendar-content, body, h1, ul, #initials-of-day, .initials {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +52,13 @@ nav {
 
 ul {
   list-style-type: none;
+}
+
+.initials {
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+
 }
 
 

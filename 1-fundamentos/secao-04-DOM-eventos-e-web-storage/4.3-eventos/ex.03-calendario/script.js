@@ -43,6 +43,7 @@ const inicialDiasConteudoCalendario = () => {
     
     div.appendChild(strong);
     iniciaisDosDias.appendChild(div);
+    div.classList.add('initials');
   } 
 }
 
