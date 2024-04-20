@@ -31,9 +31,6 @@ const diadeHojeConteudoCalendario = () => {
 
 diadeHojeConteudoCalendario();
 
-const ul = document.createElement('ul');
-calendario.appendChild(ul);
-
 const inicialDiasConteudoCalendario = () => {
   for (let i = 0; i < diasDaSemana.length; i +=1) {
     const iniciais = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -52,12 +49,16 @@ inicialDiasConteudoCalendario();
 
 const populaCalendario = () => {
 
+  const ul = document.createElement('ul');
+  calendario.appendChild(ul);
+  const tagUl = document.querySelector('[id="calendar"] ul')
+
   for (let i = 0; i <= 49; i +=1) {
     const li = document.createElement('li');
     const diaDaSemana = dataAtual.getDay();
 
-    li.classList.add('i');
-    calendario.appendChild(li);
+    li.classList.add(i);
+    tagUl.appendChild(li);
 
     
 
