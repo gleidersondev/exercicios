@@ -59,7 +59,7 @@ const populaCalendario = () => {
     const li = document.createElement('li');
     const diaDaSemana = dataAtual.getDay();
 
-    li.classList.add(i);
+    li.classList.add(`item-${i}`);
     li.textContent = i;
     tagUl.appendChild(li);
     
