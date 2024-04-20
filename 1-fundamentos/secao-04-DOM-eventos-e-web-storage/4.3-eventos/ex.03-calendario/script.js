@@ -51,35 +51,20 @@ const populaCalendario = () => {
 
   const ul = document.createElement('ul');
   calendario.appendChild(ul);
-  const tagUl = document.querySelector('[id="calendar"] ul')
+  const tagUl = document.querySelector('[id="calendar"] ul');
 
-  for (let i = 0; i <= 49; i +=1) {
+  console.log(tagUl);
+
+  for (let i = 1; i <= 50; i +=1) {
     const li = document.createElement('li');
     const diaDaSemana = dataAtual.getDay();
 
     li.classList.add(i);
+    li.textContent = i;
     tagUl.appendChild(li);
-
-    
-
-    // if (i === diaDaSemana) {
-    //   li.textContent = i;
-    //   calendario.appendChild(li);
-    //   li.classList.add('days-month');
-      
-      
-    // }
-    
     
   }
 
-  // for (let i = 0; i < diasDoMes.length; i +=1) {
-  //   const li = document.createElement('li');
-  //   let elemento = diasDoMes[i];
-  //   li.innerText = elemento;
-  //   calendario.firstElementChild.appendChild(li);
-  //   li.classList.add('.day');
-  // }
 }
 
 populaCalendario();
