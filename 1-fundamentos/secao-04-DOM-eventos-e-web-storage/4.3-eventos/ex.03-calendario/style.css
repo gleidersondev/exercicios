@@ -54,11 +54,20 @@ ul {
   list-style-type: none;
 }
 
-.initials {
+.initials, .items-days {
   width: 52px;
   height: 52px;
   font-size: 20px;
 }
+
+#calendar ul {
+  flex-wrap: wrap;
+}
+
+/* .items-days {
+  font-size: 16px;
+  
+} */
 
 
 

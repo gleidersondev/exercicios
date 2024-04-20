@@ -49,20 +49,22 @@ inicialDiasConteudoCalendario();
 
 const populaCalendario = () => {
 
-  const ul = document.createElement('ul');
-  calendario.appendChild(ul);
-  const tagUl = document.querySelector('[id="calendar"] ul');
-
-  console.log(tagUl);
-
-  for (let i = 1; i <= 50; i +=1) {
-    const li = document.createElement('li');
+  
+  // const divs = document.querySelector('[id="calendar"] div');
+  
+  for (let i = 1; i <= 49; i +=1) {
+    // const li = document.createElement('li');
     const diaDaSemana = dataAtual.getDay();
-
-    li.classList.add(`item-${i}`);
-    li.textContent = i;
-    tagUl.appendChild(li);
+    const div = document.createElement('div');
+    calendario.appendChild(div);
+    div.classList.add(`items-days`);
+    div.id = `item-${i}`;
+    div.textContent = i;
     
+    // li.classList.add(`items-days`);
+    // li.id = `item-${i}`;
+    // li.textContent = i;
+    // divs.appendChild(li);
   }
 
 }
