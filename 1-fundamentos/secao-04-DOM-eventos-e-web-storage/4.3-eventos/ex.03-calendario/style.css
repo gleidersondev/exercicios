@@ -9,7 +9,7 @@ body {
   flex-wrap: wrap;
 }
 
-#header-content, #calendar-content, body, h1, ul, #initials-of-day, .initials, #calendar {
+#header-content, #calendar-content, body, h1, ul, #initials-of-day, .initials, #calendar, .items-days {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,10 +64,6 @@ ul {
   flex-wrap: wrap;
 }
 
-/* .items-days {
-  font-size: 16px;
-  
-} */
 
 
 

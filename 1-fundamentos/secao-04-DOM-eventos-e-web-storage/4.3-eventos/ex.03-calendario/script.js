@@ -49,22 +49,13 @@ inicialDiasConteudoCalendario();
 
 const populaCalendario = () => {
 
-  
-  // const divs = document.querySelector('[id="calendar"] div');
-  
   for (let i = 1; i <= 49; i +=1) {
-    // const li = document.createElement('li');
     const diaDaSemana = dataAtual.getDay();
     const div = document.createElement('div');
     calendario.appendChild(div);
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
     div.textContent = i;
-    
-    // li.classList.add(`items-days`);
-    // li.id = `item-${i}`;
-    // li.textContent = i;
-    // divs.appendChild(li);
   }
 
 }
@@ -76,4 +67,4 @@ console.log(dataAtual.getDay());
 
 
 
-// Lógica do calendário seguinte (small-calendar-content)
+// Próximo: Lógica para enquadrar a os dias do mês ao da semana
