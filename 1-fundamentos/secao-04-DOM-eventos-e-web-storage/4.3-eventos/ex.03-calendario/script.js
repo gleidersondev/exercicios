@@ -56,13 +56,18 @@ const populaCalendario = () => {
     const li = document.createElement('li');
     const diaDaSemana = dataAtual.getDay();
 
-    if (i === diaDaSemana) {
-      li.textContent = i;
-      calendario.appendChild(li);
-      li.classList.add('days-month');
+    li.classList.add('i');
+    calendario.appendChild(li);
+
+    
+
+    // if (i === diaDaSemana) {
+    //   li.textContent = i;
+    //   calendario.appendChild(li);
+    //   li.classList.add('days-month');
       
       
-    }
+    // }
     
     
   }
