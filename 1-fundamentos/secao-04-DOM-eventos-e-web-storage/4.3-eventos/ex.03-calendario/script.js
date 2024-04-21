@@ -61,7 +61,7 @@ const populaCalendario = () => {
     // div.textContent = i;
     for (let i = diaDaSemana; i < diasDoMes.length; i +=1) {
       const item = document.querySelector(`#item-${i}`);
-    // fazer logica para textContent item
+    // fazer logica para textContent item: usar o for of
       for (let c = 0; c < diasDoMes.length; c +=1) {
         if (c <= diasDoMes) {
           
