@@ -10,7 +10,9 @@ const diasDoMes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
 
 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
-const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+
+const anoBissexto = false; //implementar função para calcular se é ano bisse
 
 
 // Lógica mural de compromissos (wall-content)
@@ -49,13 +51,19 @@ inicialDiasConteudoCalendario();
 
 const populaCalendario = () => {
 
-  for (let i = 1; i <= 49; i +=1) {
+  for (let i = 0; i <= 48; i +=1) {
     const diaDaSemana = dataAtual.getDay();
+    console.log(diaDaSemana);
     const div = document.createElement('div');
     calendario.appendChild(div);
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
-    div.textContent = i;
+    // div.textContent = i;
+    for (let i = diaDaSemana; i < diasDoMes.length; i +=1) {
+      const item = document.querySelector(`#item-${i}`);
+      const element = array[i];
+      
+    }
   }
 
 }
