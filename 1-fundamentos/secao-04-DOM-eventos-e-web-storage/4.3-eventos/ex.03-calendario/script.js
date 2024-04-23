@@ -50,7 +50,7 @@ inicialDiasConteudoCalendario();
 
 
 const populaCalendario = () => {
-
+// for para criar as divs com ids e classe
   for (let i = 0; i <= 48; i +=1) {
     const diaDaSemana = dataAtual.getDay();
     console.log(diaDaSemana);
@@ -58,18 +58,16 @@ const populaCalendario = () => {
     calendario.appendChild(div);
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
-    // div.textContent = i;
-    for (let i = diaDaSemana; i < diasDoMes.length; i +=1) {
+  //  for para pegar a div com mesmo numero do dia
+    for (let i = diaDaSemana; i <= 31; i +=1) {
       const item = document.querySelector(`#item-${i}`);
-    // fazer logica para textContent item: usar o for of
-      for (let c = 0; c < diasDoMes.length; c +=1) {
-        if (c <= diasDoMes) {
+    // for of para colocar na div correspondente o numero equivalente
+      for (let valor of diasDoMes) {
+        if (condition) {
           
         }
-        
+        item.textContent = valor;
       }
-      item.textContent = diasDoMes[]
-      
     }
   }
 
