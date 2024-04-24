@@ -50,27 +50,22 @@ inicialDiasConteudoCalendario();
 
 
 const populaCalendario = () => {
+  let contador = 0;
+  const setPrimeiroDia = dataAtual.setDate(1);
+  const primeiroDiaDaSemana = setPrimeiroDia.getDay();
 // for para criar as divs com ids e classe
   for (let i = 0; i <= 48; i +=1) {
-    const diaDaSemana = dataAtual.getDay();
-    console.log(diaDaSemana);
     const div = document.createElement('div');
     calendario.appendChild(div);
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
-  //  for para pegar a div com mesmo numero do dia
-    for (let i = diaDaSemana; i <= 31; i +=1) {
-      const item = document.querySelector(`#item-${i}`);
-    // for of para colocar na div correspondente o numero equivalente
-      for (let valor of diasDoMes) {
-        if (condition) {
-          
-        }
-        item.textContent = valor;
-      }
+//  for para pegar a div com mesmo numero do dia
+    for (let c = primeiroDiaDaSemana; c <= 31; c +=1) {
+      const item = document.querySelector(`#item-${c}`);
+      contador += 1;
+      item.textContent = contador;
     }
   }
-
 }
 
 populaCalendario();
