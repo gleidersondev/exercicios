@@ -12,7 +12,10 @@ const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julh
 
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 
-const anoBissexto = false; //implementar função para calcular se é ano bisse
+const ultimoDiaDoMesCorrente = () => {
+  const ultimoDia = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
+  return ultimoDia.getDate();
+}; 
 
 
 // Lógica mural de compromissos (wall-content)
