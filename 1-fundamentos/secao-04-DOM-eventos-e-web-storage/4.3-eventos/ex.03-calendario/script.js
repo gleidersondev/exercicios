@@ -51,8 +51,8 @@ inicialDiasConteudoCalendario();
 
 const populaCalendario = () => {
   let contador = 0;
-  const setPrimeiroDia = dataAtual.setDate(1);
-  const primeiroDiaDaSemana = setPrimeiroDia.getDay();
+  dataAtual.setDate(1);
+  const primeiroDiaDaSemana = dataAtual.getDay();
 // for para criar as divs com ids e classe
   for (let i = 0; i <= 48; i +=1) {
     const div = document.createElement('div');
@@ -63,7 +63,7 @@ const populaCalendario = () => {
     for (let c = primeiroDiaDaSemana; c <= 31; c +=1) {
       const item = document.querySelector(`#item-${c}`);
       contador += 1;
-      item.textContent = contador;
+      item.textContent = c;
     }
   }
 }
