@@ -50,7 +50,6 @@ inicialDiasConteudoCalendario();
 
 
 const populaCalendario = () => {
-  let contador = 0;
   dataAtual.setDate(1);
   const primeiroDiaDaSemana = dataAtual.getDay();
 // for para criar as divs com ids e classe
@@ -59,14 +58,14 @@ const populaCalendario = () => {
     calendario.appendChild(div);
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
+  }
 //  for para pegar a div com mesmo numero do dia
-    for (let c = primeiroDiaDaSemana; c <= 31; c +=1) {
-      const item = document.querySelector(`#item-${c}`);
-      contador += 1;
-      item.textContent = c;
-    }
+  for (let c = primeiroDiaDaSemana; c <= 31; c +=1) {
+    const item = document.querySelector(`#item-${c}`);
+    item.textContent = c;
   }
 }
+
 
 populaCalendario();
 
