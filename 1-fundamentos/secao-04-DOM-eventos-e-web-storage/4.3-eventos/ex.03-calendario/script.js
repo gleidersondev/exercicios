@@ -17,6 +17,7 @@ const ultimoDiaDoMesCorrente = () => {
   return ultimoDia.getDate();
 }; 
 
+const ultimoDia = ultimoDiaDoMesCorrente();
 
 // Lógica mural de compromissos (wall-content)
 
@@ -56,14 +57,14 @@ const populaCalendario = () => {
   dataAtual.setDate(1);
   const primeiroDiaDaSemana = dataAtual.getDay();
 // for para criar as divs com ids e classe
-  for (let i = 0; i <= 48; i +=1) {
+  for (let i = 0; i <= 34; i +=1) {
     const div = document.createElement('div');
     calendario.appendChild(div);
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
   }
 //  for para pegar a div com mesmo numero do dia
-  for (let c = primeiroDiaDaSemana; c <= 31; c +=1) {
+  for (let c = primeiroDiaDaSemana; c <= ultimoDia; c +=1) {
     const item = document.querySelector(`#item-${c}`);
     item.textContent = c;
   }
