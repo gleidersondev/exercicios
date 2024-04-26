@@ -70,12 +70,6 @@ const populaCalendario = () => {
   }
 }
 
-
 populaCalendario();
 
 console.log(dataAtual.getDay());
-
-
-
-
-// Próximo: Lógica para enquadrar a os dias do mês ao da semana
