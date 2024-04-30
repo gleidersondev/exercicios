@@ -5,6 +5,7 @@ const calendario = document.querySelector('#calendar');
 const mesConteudoCalendario = document.querySelector('#month');
 const iniciaisDosDias = document.querySelector('#initials-of-day');
 const dataAtual = new Date();
+const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
 
 const diasDoMes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
@@ -19,6 +20,14 @@ const ultimoDiaDoMesCorrente = () => {
 
 const ultimoDia = ultimoDiaDoMesCorrente();
 
+const encontrarPrimeiroDiaDoMes = () => {
+  dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
+  const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia especificado acima
+  return primeiroDiaDaSemana;
+};
+
+let primeiroDiaDoMes = encontrarPrimeiroDiaDoMes();
+
 // Lógica mural de compromissos (wall-content)
 
 
@@ -26,7 +35,7 @@ const ultimoDia = ultimoDiaDoMesCorrente();
 // Lógica do calendário (calendar-content)
 
 const mesAtualConteudoCalendario = () => {
-  mesConteudoCalendario.textContent = meses[dataAtual.getMonth()];
+  return mesConteudoCalendario.textContent = meses[dataAtual.getMonth()];
 };
 
 mesAtualConteudoCalendario();
@@ -54,8 +63,6 @@ inicialDiasConteudoCalendario();
 
 
 const populaCalendario = () => {
-  dataAtual.setDate(1);
-  const primeiroDiaDaSemana = dataAtual.getDay();
 // for para criar as divs com ids e classe
   for (let i = 0; i <= 34; i +=1) {
     const div = document.createElement('div');
@@ -64,7 +71,7 @@ const populaCalendario = () => {
     div.id = `item-${i}`;
   }
 //  for para pegar a div com mesmo numero do dia
-  for (let c = primeiroDiaDaSemana; c <= ultimoDia; c +=1) {
+  for (let c = primeiroDiaDoMes; c <= ultimoDia; c +=1) {
     const item = document.querySelector(`#item-${c}`);
     item.textContent = c;
   }
@@ -72,4 +79,15 @@ const populaCalendario = () => {
 
 populaCalendario();
 
-console.log(dataAtual.getDay());
+const retrocederMes = (event) => {
+
+  const mes = dataAtual.getMonth();
+
+  for (let i = mes; i < meses.length && i >= 0; i -= 1) {
+    const retrocedeu = meses[mes - 1];
+    
+    
+  }
+}
+
+retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
