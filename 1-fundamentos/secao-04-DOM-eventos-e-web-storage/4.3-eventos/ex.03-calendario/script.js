@@ -7,6 +7,9 @@ const iniciaisDosDias = document.querySelector('#initials-of-day');
 const dataAtual = new Date();
 const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
 
+// let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
+
+
 const diasDoMes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
@@ -19,6 +22,9 @@ const ultimoDiaDoMesCorrente = () => {
 }; 
 
 const ultimoDia = ultimoDiaDoMesCorrente();
+
+const mesAtivo = dataAtual.getMonth();
+console.log(mesAtivo);
 
 const encontrarPrimeiroDiaDoMes = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
@@ -70,7 +76,7 @@ const populaCalendario = () => {
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
   }
-//  for para pegar a div com mesmo numero do dia
+//  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
   for (let c = primeiroDiaDoMes; c <= ultimoDia; c +=1) {
     const item = document.querySelector(`#item-${c}`);
     item.textContent = c;
