@@ -24,15 +24,17 @@ const ultimoDiaDoMesCorrente = () => {
 }; 
 
 const ultimoDia = ultimoDiaDoMesCorrente();
+console.log('O último dia do mês é', ultimoDia);
 
 
-const encontrarPrimeiroDiaDoMes = () => {
+const encontrarPrimeiroDiaDaSemana = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
   const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia especificado acima
   return primeiroDiaDaSemana;
 };
 
-let primeiroDiaDoMes = encontrarPrimeiroDiaDoMes();
+let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
+console.log('o primeiro dia da semana é', primeiroDiaDaSemana);
 
 // Lógica mural de compromissos (wall-content)
 
@@ -76,8 +78,17 @@ const populaCalendario = () => {
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
   }
+
+  let dias = 0;
+
+  if ((ultimoDia - primeiroDiaDaSemana) < ultimoDia) {
+    dias =  ultimoDia + primeiroDiaDaSemana;
+  } else {
+    dias = ultimoDia;
+  }
+  
 //  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
-  for (let c = primeiroDiaDoMes; c <= ultimoDia; c +=1) {
+  for (let c = primeiroDiaDaSemana; c <= ultimoDia; c +=1) {
     const item = document.querySelector(`#item-${c}`);
     item.textContent = c;
   }
