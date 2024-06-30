@@ -80,17 +80,19 @@ const populaCalendario = () => {
   }
 
   let dias = 0;
+  let contador = 0;
 
   if ((ultimoDia - primeiroDiaDaSemana) < ultimoDia) {
     dias =  ultimoDia + primeiroDiaDaSemana;
   } else {
     dias = ultimoDia;
   }
-  
+
 //  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
-  for (let c = primeiroDiaDaSemana; c <= ultimoDia; c +=1) {
+  for (let c = primeiroDiaDaSemana; c <= dias; c +=1) {
     const item = document.querySelector(`#item-${c}`);
-    item.textContent = c;
+    item.textContent = diasDoMes[contador];
+    contador +=1;
   }
 }
 
