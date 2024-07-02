@@ -104,7 +104,7 @@ const retrocederMes = (event) => {
 
   for (let i = mes; i < meses.length && i >= 0; i -= 1) {
     const retrocedeu = meses[mes - 1];
-    // implementar essa função para que ela utilize popula calendari
+    // implementar essa função para que ela utilize popula calendario
     
   }
 }
