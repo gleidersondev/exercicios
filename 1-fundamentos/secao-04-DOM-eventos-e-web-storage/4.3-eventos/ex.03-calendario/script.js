@@ -9,8 +9,6 @@ const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-b
 
 // let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
 const mesAtivo = dataAtual.getMonth();
-console.log(mesAtivo);
-
 
 const diasDoMes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
@@ -24,12 +22,12 @@ const ultimoDiaDoMesCorrente = () => {
 }; 
 
 const ultimoDia = ultimoDiaDoMesCorrente();
-console.log('O último dia do mês é', ultimoDia);
-
 
 const encontrarPrimeiroDiaDaSemana = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
+  console.log(dataAtual.setDate(1));
   const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia especificado acima
+  console.log('o primeiro dia é', primeiroDiaDaSemana);
   return primeiroDiaDaSemana;
 };
 
