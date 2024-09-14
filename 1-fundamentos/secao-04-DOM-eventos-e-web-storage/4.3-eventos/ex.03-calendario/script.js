@@ -84,12 +84,6 @@ const populaCalendario = () => {
   let dias = 0;
   let contador = 0;
 
-  // if ((ultimoDia - primeiroDiaDaSemana) < ultimoDia) {
-  //   dias =  ultimoDia + primeiroDiaDaSemana;
-  // } else {
-  //   dias = ultimoDia;
-  // }
-
   if (ultimoDia === 31) {
     dias = 30;
   } else {
@@ -102,7 +96,6 @@ const populaCalendario = () => {
     item.textContent = diasDoMes[contador];
     contador +=1;
     console.log(contador);
-    
   }
 }
 
