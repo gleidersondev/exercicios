@@ -8,7 +8,6 @@ let dataAtual = new Date();
 const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
 
 // let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
-const mesAtivo = dataAtual.getMonth();
 
 const diasDoMes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
@@ -22,8 +21,6 @@ const ultimoDiaDoMesCorrente = () => {
 }; 
 
 const ultimoDia = ultimoDiaDoMesCorrente();
-console.log("o ultimo dia do mẽs é", ultimoDia);
-
 
 const encontrarPrimeiroDiaDaSemana = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
@@ -33,7 +30,6 @@ const encontrarPrimeiroDiaDaSemana = () => {
 };
 
 let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
-console.log('o primeiro dia da semana é', primeiroDiaDaSemana);
 
 // Lógica mural de compromissos (wall-content)
 
@@ -93,21 +89,15 @@ const populaCalendario = () => {
     const item = document.querySelector(`#item-${c}`);
     item.textContent = diasDoMes[contador];
     contador +=1;
-    console.log(contador);
   }
 }
 
 populaCalendario();
 
-const retrocederMes = (event) => {
-
-  const mes = dataAtual.getMonth();
-
-  for (let i = mes; i < meses.length && i >= 0; i -= 1) {
-    const retrocedeu = meses[mes - 1];
-    // implementar essa função para que ela utilize popula calendario
-    
-  }
-}
+const retrocederMes = () => {
+  dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - 1);
+  console.log(dataAtual.getMonth());
+  
+};
 
 retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
