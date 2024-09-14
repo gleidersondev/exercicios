@@ -51,8 +51,6 @@ mesAtualConteudoCalendario();
 
 const diadeHojeConteudoCalendario = () => {
   const dia = new Date();
-  console.log("o dia de hoje agora é", dia.getDay());
-  
   diadeHoje.textContent = diasDaSemana[dia.getDay()];
 }
 
@@ -86,17 +84,25 @@ const populaCalendario = () => {
   let dias = 0;
   let contador = 0;
 
-  if ((ultimoDia - primeiroDiaDaSemana) < ultimoDia) {
-    dias =  ultimoDia + primeiroDiaDaSemana;
+  // if ((ultimoDia - primeiroDiaDaSemana) < ultimoDia) {
+  //   dias =  ultimoDia + primeiroDiaDaSemana;
+  // } else {
+  //   dias = ultimoDia;
+  // }
+
+  if (ultimoDia === 31) {
+    dias = 30;
   } else {
-    dias = ultimoDia;
-  }
+    dias = 29;
+  };
 
 //  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
   for (let c = primeiroDiaDaSemana; c <= dias; c +=1) {
     const item = document.querySelector(`#item-${c}`);
     item.textContent = diasDoMes[contador];
     contador +=1;
+    console.log(contador);
+    
   }
 }
 
