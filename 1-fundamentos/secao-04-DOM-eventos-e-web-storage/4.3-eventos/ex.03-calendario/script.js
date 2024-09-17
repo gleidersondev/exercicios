@@ -18,16 +18,20 @@ const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira'
 const ultimoDiaDoMesCorrente = () => {
   const ultimoDia = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
   return ultimoDia.getDate();
-}; 
+};
+
+ultimoDiaDoMesCorrente();
 
 const ultimoDia = ultimoDiaDoMesCorrente();
 
 const encontrarPrimeiroDiaDaSemana = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
-  const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia especificado acima
+  const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia da semana especificado acima
   console.log('o primeiro dia é', primeiroDiaDaSemana);
   return primeiroDiaDaSemana;
 };
+
+encontrarPrimeiroDiaDaSemana();
 
 let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
 
@@ -79,9 +83,9 @@ const populaCalendario = () => {
   let contador = 0;
 
   if (ultimoDia === 31) {
-    dias = 30;
+    dias = 30 + primeiroDiaDaSemana;
   } else {
-    dias = 29;
+    dias = 29 + primeiroDiaDaSemana;
   };
 
 //  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
@@ -96,8 +100,15 @@ populaCalendario();
 
 const retrocederMes = () => {
   dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - 1);
-  console.log(dataAtual.getMonth());
+  console.log('o primeiro dia do mes anterior é', dataAtual.setDate(1));
+  
+  atualizaCalendário();
   
 };
 
 retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
+
+const atualizaCalendário = () => {
+  mesAtualConteudoCalendario();
+  populaCalendario();
+};
