@@ -17,21 +17,25 @@ const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira'
 
 const ultimoDiaDoMesCorrente = () => {
   const ultimoDia = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
+  // console.log('eu sou ultimoDiaDoMesCorrente');
+  
   return ultimoDia.getDate();
 };
 
 ultimoDiaDoMesCorrente();
 
 const ultimoDia = ultimoDiaDoMesCorrente();
+console.log('ultimoDia', ultimoDia);
+
 
 const encontrarPrimeiroDiaDaSemana = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
   const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia da semana especificado acima
-  console.log('o primeiro dia é', primeiroDiaDaSemana);
+  // console.log('eu sou encontrarPrimeiroDiaDaSemana', primeiroDiaDaSemana);
   return primeiroDiaDaSemana;
 };
 
-encontrarPrimeiroDiaDaSemana();
+// encontrarPrimeiroDiaDaSemana();
 
 let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
 
@@ -42,14 +46,17 @@ let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
 // Lógica do calendário (calendar-content)
 
 const mesAtualConteudoCalendario = () => {
+  // console.log('Eu sou mesAtualConteudoCalendario');
+  
   return mesConteudoCalendario.textContent = meses[dataAtual.getMonth()];
 };
 
-mesAtualConteudoCalendario();
+// mesAtualConteudoCalendario();
 
 const diadeHojeConteudoCalendario = () => {
   const dia = new Date();
   diadeHoje.textContent = diasDaSemana[dia.getDay()];
+  // console.log('eu sou diaDeHojeConteudoCalendario', diadeHoje);
 }
 
 diadeHojeConteudoCalendario();
@@ -90,25 +97,38 @@ const populaCalendario = () => {
 
 //  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
   for (let c = primeiroDiaDaSemana; c <= dias; c +=1) {
+    console.log('dentro de pop',primeiroDiaDaSemana);
+    console.log('dentro de pop',dias);
+    
     const item = document.querySelector(`#item-${c}`);
     item.textContent = diasDoMes[contador];
     contador +=1;
   }
+
+  console.log("eu sou populacalendario");
+  
 }
 
 populaCalendario();
 
 const retrocederMes = () => {
   dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - 1);
-  console.log('o primeiro dia do mes anterior é', dataAtual.setDate(1));
+  // dataAtual.setDate(1);
+  // const retroPrimeiroDiaDaSemana = dataAtual.getDay();
+  console.log('eu sou retroceder mes');
   
-  atualizaCalendário();
+  atualizaCalendario();
   
 };
 
 retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
 
-const atualizaCalendário = () => {
+const atualizaCalendario = () => {
+  ultimoDiaDoMesCorrente();
+  encontrarPrimeiroDiaDaSemana();
   mesAtualConteudoCalendario();
+  diadeHojeConteudoCalendario();
   populaCalendario();
+  console.log('atualizando calendário');
+  
 };
