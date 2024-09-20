@@ -15,28 +15,31 @@ const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julh
 
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 
+let ultimoDia = 0;
+
+let primeiroDiaDaSemana = 0;
+
 // Função para encontra o último dia do mês corrente >> retorna numberr
 const ultimoDiaDoMesCorrente = () => {
-  const ultimoDia = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
+  const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
   
-  return ultimoDia.getDate();
+  ultimoDia = ultimoDiaDoMes.getDate();
 };
 
 ultimoDiaDoMesCorrente();
 
-let ultimoDia = ultimoDiaDoMesCorrente();
+// let ultimoDia = ultimoDiaDoMesCorrente();
 console.log('O ultimo dia do mês corrente é', ultimoDia);
 
 // Função para encontra o primeiro dia da semana do mês corrente >> retorna number
 const encontrarPrimeiroDiaDaSemana = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
-  const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia da semana especificado acima
-  
-  return primeiroDiaDaSemana;
+  primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia da semana especificado acima
+  // return primeiroDiaDaSemana;
 };
 
-let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
-console.log('primeiroDiaDaSemana abaixo da função', primeiroDiaDaSemana);
+// let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
+console.log('primeiroDiaDaSemana é', primeiroDiaDaSemana);
 
 
 // LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
@@ -81,7 +84,7 @@ const populaCalendario = () => {
   calendario.innerHTML = '';
 
 // for para criar as divs com ids e classe
-  for (let i = 0; i <= 34; i +=1) {
+  for (let i = 0; i <= 41; i +=1) {
     const div = document.createElement('div');
     calendario.appendChild(div);
     div.classList.add(`items-days`);
@@ -115,7 +118,7 @@ populaCalendario();
 // Função para retorceder mês
 const retrocederMes = () => {
   dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - 1);
-  console.log('eu sou retroceder mes');
+  console.log('eu sou retroceder mês', dataAtual.getMonth());
   
   atualizaCalendario();
 };
