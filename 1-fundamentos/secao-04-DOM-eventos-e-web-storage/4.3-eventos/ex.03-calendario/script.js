@@ -15,52 +15,52 @@ const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julh
 
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 
+// Função para encontra o último dia do mês corrente >> retorna numberr
 const ultimoDiaDoMesCorrente = () => {
   const ultimoDia = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
-  // console.log('eu sou ultimoDiaDoMesCorrente');
   
   return ultimoDia.getDate();
 };
 
 ultimoDiaDoMesCorrente();
 
-const ultimoDia = ultimoDiaDoMesCorrente();
-console.log('ultimoDia', ultimoDia);
+let ultimoDia = ultimoDiaDoMesCorrente();
+console.log('O ultimo dia do mês corrente é', ultimoDia);
 
-
+// Função para encontra o primeiro dia da semana do mês corrente >> retorna number
 const encontrarPrimeiroDiaDaSemana = () => {
   dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
   const primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia da semana especificado acima
-  // console.log('eu sou encontrarPrimeiroDiaDaSemana', primeiroDiaDaSemana);
+  
   return primeiroDiaDaSemana;
 };
 
-// encontrarPrimeiroDiaDaSemana();
-
 let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
-
-// Lógica mural de compromissos (wall-content)
-
+console.log('primeiroDiaDaSemana abaixo da função', primeiroDiaDaSemana);
 
 
-// Lógica do calendário (calendar-content)
+// LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
 
+
+
+// LÓGICA DO CALENDÁRIO PRINCIPAL (CALENDAR-CONTENT)
+
+// Função para aparecer o Mês ativo na div id month
 const mesAtualConteudoCalendario = () => {
-  // console.log('Eu sou mesAtualConteudoCalendario');
-  
-  return mesConteudoCalendario.textContent = meses[dataAtual.getMonth()];
+  mesConteudoCalendario.textContent = meses[dataAtual.getMonth()];
 };
 
-// mesAtualConteudoCalendario();
+mesAtualConteudoCalendario();
 
+// Função para aparecer o dia por extenso na div id todays-day >> retorna string
 const diadeHojeConteudoCalendario = () => {
   const dia = new Date();
   diadeHoje.textContent = diasDaSemana[dia.getDay()];
-  // console.log('eu sou diaDeHojeConteudoCalendario', diadeHoje);
 }
 
 diadeHojeConteudoCalendario();
 
+// Função que coloca as iniciais dos dias da semana
 const inicialDiasConteudoCalendario = () => {
   for (let i = 0; i < diasDaSemana.length; i +=1) {
     const iniciais = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -76,8 +76,10 @@ const inicialDiasConteudoCalendario = () => {
 
 inicialDiasConteudoCalendario();
 
-
+// Função para colocar as divs e os dias no calendários
 const populaCalendario = () => {
+  calendario.innerHTML = '';
+
 // for para criar as divs com ids e classe
   for (let i = 0; i <= 34; i +=1) {
     const div = document.createElement('div');
@@ -97,8 +99,8 @@ const populaCalendario = () => {
 
 //  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
   for (let c = primeiroDiaDaSemana; c <= dias; c +=1) {
-    console.log('dentro de pop',primeiroDiaDaSemana);
-    console.log('dentro de pop',dias);
+    console.log('primeiroDiaDaSemana dentro de popula',primeiroDiaDaSemana);
+    console.log('ultimoDia dentro de popula',dias);
     
     const item = document.querySelector(`#item-${c}`);
     item.textContent = diasDoMes[contador];
@@ -106,29 +108,27 @@ const populaCalendario = () => {
   }
 
   console.log("eu sou populacalendario");
-  
-}
+};
 
 populaCalendario();
 
+// Função para retorceder mês
 const retrocederMes = () => {
   dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - 1);
-  // dataAtual.setDate(1);
-  // const retroPrimeiroDiaDaSemana = dataAtual.getDay();
   console.log('eu sou retroceder mes');
   
   atualizaCalendario();
-  
 };
 
 retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
 
+// Função para atualizar calendário após clicar em retroceder
 const atualizaCalendario = () => {
   ultimoDiaDoMesCorrente();
   encontrarPrimeiroDiaDaSemana();
+  // console.log('chemei de novo primeiroDiaDaSemana', primeiroDiaDaSemana);
   mesAtualConteudoCalendario();
   diadeHojeConteudoCalendario();
   populaCalendario();
-  console.log('atualizando calendário');
-  
+
 };
