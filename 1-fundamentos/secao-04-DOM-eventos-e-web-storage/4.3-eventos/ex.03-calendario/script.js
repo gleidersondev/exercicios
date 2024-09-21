@@ -4,6 +4,7 @@ const diadeHoje = document.querySelector('#todays-day');
 const calendario = document.querySelector('#calendar');
 const mesConteudoCalendario = document.querySelector('#month');
 const iniciaisDosDias = document.querySelector('#initials-of-day');
+const avançarProximoMes = document.querySelector('#advance-month');
 let dataAtual = new Date();
 const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
 
@@ -130,6 +131,7 @@ const avançarMes = () => {
 };
 
 retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
+avançarProximoMes.addEventListener('click', avançarMes);
 
 // Função para atualizar calendário após clicar em retroceder
 const atualizaCalendario = () => {
