@@ -4,36 +4,66 @@ const diadeHoje = document.querySelector('#todays-day');
 const calendario = document.querySelector('#calendar');
 const mesConteudoCalendario = document.querySelector('#month');
 const iniciaisDosDias = document.querySelector('#initials-of-day');
-const dataAtual = new Date();
+let dataAtual = new Date();
+const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
+
+// let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
 
 const diasDoMes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
-const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+
+let ultimoDia = 0;
+
+let primeiroDiaDaSemana = 0;
+
+// Função para encontra o último dia do mês corrente >> retorna numberr
+const ultimoDiaDoMesCorrente = () => {
+  const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0);
+  
+  ultimoDia = ultimoDiaDoMes.getDate();
+};
+
+ultimoDiaDoMesCorrente();
+
+// let ultimoDia = ultimoDiaDoMesCorrente();
+console.log('O ultimo dia do mês corrente é', ultimoDia);
+
+// Função para encontra o primeiro dia da semana do mês corrente >> retorna number
+const encontrarPrimeiroDiaDaSemana = () => {
+  dataAtual.setDate(1); //definindo o dia do mês para o primeiro dia do mês corrente
+  primeiroDiaDaSemana = dataAtual.getDay(); //pegando o dia da semana especificado acima
+  // return primeiroDiaDaSemana;
+};
+
+// let primeiroDiaDaSemana = encontrarPrimeiroDiaDaSemana();
+console.log('primeiroDiaDaSemana é', primeiroDiaDaSemana);
 
 
-// Lógica mural de compromissos (wall-content)
+// LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
 
 
 
-// Lógica do calendário (calendar-content)
+// LÓGICA DO CALENDÁRIO PRINCIPAL (CALENDAR-CONTENT)
 
+// Função para aparecer o Mês ativo na div id month
 const mesAtualConteudoCalendario = () => {
   mesConteudoCalendario.textContent = meses[dataAtual.getMonth()];
 };
 
 mesAtualConteudoCalendario();
 
+// Função para aparecer o dia por extenso na div id todays-day >> retorna string
 const diadeHojeConteudoCalendario = () => {
-  diadeHoje.textContent = diasDaSemana[dataAtual.getDay()];
+  const dia = new Date();
+  diadeHoje.textContent = diasDaSemana[dia.getDay()];
 }
 
 diadeHojeConteudoCalendario();
 
-const ul = document.createElement('ul');
-calendario.appendChild(ul);
-
+// Função que coloca as iniciais dos dias da semana
 const inicialDiasConteudoCalendario = () => {
   for (let i = 0; i < diasDaSemana.length; i +=1) {
     const iniciais = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -43,27 +73,63 @@ const inicialDiasConteudoCalendario = () => {
     
     div.appendChild(strong);
     iniciaisDosDias.appendChild(div);
+    div.classList.add('initials');
   } 
 }
 
 inicialDiasConteudoCalendario();
 
-
+// Função para colocar as divs e os dias no calendários
 const populaCalendario = () => {
-  for (let i = 0; i < diasDoMes.length; i +=1) {
-    const li = document.createElement('li');
-    let elemento = diasDoMes[i];
-    li.innerText = elemento;
-    calendario.firstElementChild.appendChild(li);
-    li.classList.add('.day');
+  calendario.innerHTML = '';
+
+// for para criar as divs com ids e classe
+  for (let i = 0; i <= 41; i +=1) {
+    const div = document.createElement('div');
+    calendario.appendChild(div);
+    div.classList.add(`items-days`);
+    div.id = `item-${i}`;
+  };
+
+  let dias = 0;
+  let contador = 0;
+
+  if (ultimoDia === 31) {      //alterar logica para fevereiro que tem 29 dias
+    dias = 30 + primeiroDiaDaSemana;
+  } else if (ultimoDia === 30) {
+    dias = 29 + primeiroDiaDaSemana;
+  } else if (ultimoDia === 29) {
+    dias = 28 + primeiroDiaDaSemana;
+  } else {
+    dias = 27 + primeiroDiaDaSemana;
+  };
+
+//  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
+  for (let c = primeiroDiaDaSemana; c <= dias; c +=1) {
+    const item = document.querySelector(`#item-${c}`);
+    item.textContent = diasDoMes[contador];
+    contador +=1;
   }
-}
+};
 
 populaCalendario();
 
-console.log(dataAtual.getMonth() + 1);
+// Função para retorceder mês
+const retrocederMes = () => {
+  dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() - 1);
+  console.log('eu sou retroceder mês', dataAtual.getMonth());
+  
+  atualizaCalendario();
+};
 
+retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
 
+// Função para atualizar calendário após clicar em retroceder
+const atualizaCalendario = () => {
+  ultimoDiaDoMesCorrente();
+  encontrarPrimeiroDiaDaSemana();
+  mesAtualConteudoCalendario();
+  diadeHojeConteudoCalendario();
+  populaCalendario();
 
-
-// Lógica do calendário seguinte (small-calendar-content)
+};
