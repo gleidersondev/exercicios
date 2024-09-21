@@ -89,28 +89,27 @@ const populaCalendario = () => {
     calendario.appendChild(div);
     div.classList.add(`items-days`);
     div.id = `item-${i}`;
-  }
+  };
 
   let dias = 0;
   let contador = 0;
 
-  if (ultimoDia === 31) {
+  if (ultimoDia === 31) {      //alterar logica para fevereiro que tem 29 dias
     dias = 30 + primeiroDiaDaSemana;
-  } else {
+  } else if (ultimoDia === 30) {
     dias = 29 + primeiroDiaDaSemana;
+  } else if (ultimoDia === 29) {
+    dias = 28 + primeiroDiaDaSemana;
+  } else {
+    dias = 27 + primeiroDiaDaSemana;
   };
 
 //  for para pegar a div com mesmo numero do primeiro dia e distribuir os dias seguintes
   for (let c = primeiroDiaDaSemana; c <= dias; c +=1) {
-    console.log('primeiroDiaDaSemana dentro de popula',primeiroDiaDaSemana);
-    console.log('ultimoDia dentro de popula',dias);
-    
     const item = document.querySelector(`#item-${c}`);
     item.textContent = diasDoMes[contador];
     contador +=1;
   }
-
-  console.log("eu sou populacalendario");
 };
 
 populaCalendario();
@@ -129,7 +128,6 @@ retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
 const atualizaCalendario = () => {
   ultimoDiaDoMesCorrente();
   encontrarPrimeiroDiaDaSemana();
-  // console.log('chemei de novo primeiroDiaDaSemana', primeiroDiaDaSemana);
   mesAtualConteudoCalendario();
   diadeHojeConteudoCalendario();
   populaCalendario();
