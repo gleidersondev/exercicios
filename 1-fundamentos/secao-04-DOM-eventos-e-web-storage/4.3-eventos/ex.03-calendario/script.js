@@ -94,7 +94,7 @@ const populaCalendario = () => {
   let dias = 0;
   let contador = 0;
 
-  if (ultimoDia === 31) {      //alterar logica para fevereiro que tem 29 dias
+  if (ultimoDia === 31) { 
     dias = 30 + primeiroDiaDaSemana;
   } else if (ultimoDia === 30) {
     dias = 29 + primeiroDiaDaSemana;
@@ -122,6 +122,13 @@ const retrocederMes = () => {
   atualizaCalendario();
 };
 
+// Função para avançar mês
+const avançarMes = () => {
+  dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1);
+
+  atualizaCalendario();
+};
+
 retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
 
 // Função para atualizar calendário após clicar em retroceder
@@ -131,5 +138,4 @@ const atualizaCalendario = () => {
   mesAtualConteudoCalendario();
   diadeHojeConteudoCalendario();
   populaCalendario();
-
 };
