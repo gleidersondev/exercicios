@@ -7,6 +7,7 @@ const iniciaisDosDias = document.querySelector('#initials-of-day');
 const avançarProximoMes = document.querySelector('#advance-month');
 let dataAtual = new Date();
 const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
+const postIts = document.querySelector('#post-its');
 
 // let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
 
@@ -44,6 +45,9 @@ console.log('primeiroDiaDaSemana é', primeiroDiaDaSemana);
 
 
 // LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
+
+
+
 
 
 
