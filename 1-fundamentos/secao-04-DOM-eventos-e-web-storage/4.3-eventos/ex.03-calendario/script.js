@@ -8,6 +8,7 @@ const iniciaisDosDias = document.querySelector('#initials-of-day');
 const avançarProximoMes = document.querySelector('#advance-month');
 let dataAtual = new Date();
 const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
+const retrocederMesMuralCompromissos = document.querySelector('#go-back-month-postit');
 const postIts = document.querySelector('#post-its');
 
 // let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
@@ -46,7 +47,18 @@ console.log('primeiroDiaDaSemana é', primeiroDiaDaSemana);
 
 
 // LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
-mesAtualConteudoPostIt.textContent = meses[dataAtual.getMonth()];
+mesAtualConteudoPostIt.textContent = meses[dataAtual.getMonth()]; //Preenche mês ativo no mural de compromissos
+
+const retrocederPostIt = () => {
+  mesAtualConteudoPostIt.textContent = '';
+  mesAtualConteudoPostIt.textContent = meses[dataAtual.getMonth() - 1];
+};
+
+retrocederMesMuralCompromissos.addEventListener('click', retrocederPostIt);
+
+
+
+
 
 
 
