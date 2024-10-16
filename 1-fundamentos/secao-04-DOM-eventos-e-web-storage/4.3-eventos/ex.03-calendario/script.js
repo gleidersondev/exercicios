@@ -3,6 +3,7 @@ const calendarioPrincipal = document.querySelector('#main-calendar');
 const diadeHoje = document.querySelector('#todays-day');
 const calendario = document.querySelector('#calendar');
 const mesConteudoCalendario = document.querySelector('#month');
+const mesAtualConteudoPostIt = document.querySelector('#month-postit');
 const iniciaisDosDias = document.querySelector('#initials-of-day');
 const avançarProximoMes = document.querySelector('#advance-month');
 let dataAtual = new Date();
@@ -45,6 +46,8 @@ console.log('primeiroDiaDaSemana é', primeiroDiaDaSemana);
 
 
 // LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
+mesAtualConteudoPostIt.textContent = meses[dataAtual.getMonth()];
+
 
 
 
