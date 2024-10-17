@@ -49,9 +49,20 @@ console.log('primeiroDiaDaSemana é', primeiroDiaDaSemana);
 // LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
 mesAtualConteudoPostIt.textContent = meses[dataAtual.getMonth()]; //Preenche mês ativo no mural de compromissos
 
+let mesAtivoMuralCompromissos = dataAtual.getMonth();
+console.log('O mes ativo no mural de compromisso e *****', mesAtivoMuralCompromissos);
+
 const retrocederPostIt = () => {
-  mesAtualConteudoPostIt.textContent = '';
-  mesAtualConteudoPostIt.textContent = meses[dataAtual.getMonth() - 1];
+
+  if (mesAtivoMuralCompromissos < 1) {
+    mesAtivoMuralCompromissos = 11;
+    mesAtualConteudoPostIt.textContent = meses[11];
+  } else {
+    mesAtualConteudoPostIt.textContent = meses[mesAtivoMuralCompromissos - 1];
+    mesAtivoMuralCompromissos -= 1; 
+    console.log(mesAtivoMuralCompromissos);
+    
+  }
 };
 
 retrocederMesMuralCompromissos.addEventListener('click', retrocederPostIt);
