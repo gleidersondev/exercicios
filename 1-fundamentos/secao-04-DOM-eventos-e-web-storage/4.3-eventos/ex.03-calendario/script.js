@@ -60,21 +60,14 @@ anoAtivoMuralCompromissos.textContent = anoAtualMuralCompromissos;
 console.log('O ano do mural de compromissos é', anoAtualMuralCompromissos);
 
 
-
+// retrocede mês no mural compromissos
 const retrocederPostIt = () => {
 
   dataAtualMuralCompromissos = new Date(dataAtualMuralCompromissos.getFullYear(), dataAtualMuralCompromissos.getMonth() - 1);
 
-  // if (mesAtivoMuralCompromissos < 1) {
-  //   mesAtivoMuralCompromissos = 11;
-  //   mesAtualConteudoPostIt.textContent = meses[11];
-  // } else {
-  //   mesAtualConteudoPostIt.textContent = meses[mesAtivoMuralCompromissos - 1];
-  //   mesAtivoMuralCompromissos -= 1; 
-  //   console.log(mesAtivoMuralCompromissos);
-    
-  // }
+  mesAtualConteudoPostIt.textContent = meses[dataAtualMuralCompromissos.getMonth()];
 
+  anoAtivoMuralCompromissos.textContent = dataAtualMuralCompromissos.getFullYear();
 
 };
 
