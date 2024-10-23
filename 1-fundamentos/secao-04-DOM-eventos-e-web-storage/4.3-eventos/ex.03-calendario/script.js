@@ -3,9 +3,15 @@ const calendarioPrincipal = document.querySelector('#main-calendar');
 const diadeHoje = document.querySelector('#todays-day');
 const calendario = document.querySelector('#calendar');
 const mesConteudoCalendario = document.querySelector('#month');
+const mesAtualConteudoPostIt = document.querySelector('#month-postit');
 const iniciaisDosDias = document.querySelector('#initials-of-day');
+const avançarProximoMes = document.querySelector('#advance-month');
 let dataAtual = new Date();
 const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
+const retrocederMesMuralCompromissos = document.querySelector('#go-back-month-postit');
+const postIts = document.querySelector('#post-its');
+const anoAtivoMuralCompromissos = document.querySelector('#year-postit');
+const avancarProximoMesMuralCompromissos = document.querySelector('#advance-month-postit');
 
 // let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
 
@@ -43,6 +49,54 @@ console.log('primeiroDiaDaSemana é', primeiroDiaDaSemana);
 
 
 // LÓGICA MURAL DE COMPROMISSOS (WALL-CONTENT)
+let dataAtualMuralCompromissos = new Date();
+
+mesAtualConteudoPostIt.textContent = meses[dataAtualMuralCompromissos.getMonth()]; //Preenche mês ativo no mural de compromissos
+
+let mesAtivoMuralCompromissos = dataAtualMuralCompromissos.getMonth();
+console.log('O mes ativo no mural de compromisso e *****', mesAtivoMuralCompromissos);
+
+let anoAtualMuralCompromissos = dataAtualMuralCompromissos.getFullYear();
+anoAtivoMuralCompromissos.textContent = anoAtualMuralCompromissos;
+console.log('O ano do mural de compromissos é', anoAtualMuralCompromissos);
+
+
+// retrocede mês no mural compromissos
+const retrocederPostIt = () => {
+
+  dataAtualMuralCompromissos = new Date(dataAtualMuralCompromissos.getFullYear(), dataAtualMuralCompromissos.getMonth() - 1);
+
+  mesAtualConteudoPostIt.textContent = meses[dataAtualMuralCompromissos.getMonth()];
+
+  anoAtivoMuralCompromissos.textContent = dataAtualMuralCompromissos.getFullYear();
+
+};
+
+console.log(`mes ativo ${dataAtualMuralCompromissos.getMonth()}`);
+
+
+retrocederMesMuralCompromissos.addEventListener('click', retrocederPostIt);
+
+// avança mês no mural compromissos 
+const avancaPostIt = () => {
+
+  dataAtualMuralCompromissos = new Date(dataAtualMuralCompromissos.getFullYear(), dataAtualMuralCompromissos.getMonth() + 1);
+
+  mesAtualConteudoPostIt.textContent = meses[dataAtualMuralCompromissos.getMonth()];
+
+  anoAtivoMuralCompromissos.textContent = dataAtualMuralCompromissos.getFullYear();
+
+};
+
+avancarProximoMesMuralCompromissos.addEventListener('click', avancaPostIt);
+
+
+
+
+
+
+
+
 
 
 
@@ -94,7 +148,7 @@ const populaCalendario = () => {
   let dias = 0;
   let contador = 0;
 
-  if (ultimoDia === 31) {      //alterar logica para fevereiro que tem 29 dias
+  if (ultimoDia === 31) { 
     dias = 30 + primeiroDiaDaSemana;
   } else if (ultimoDia === 30) {
     dias = 29 + primeiroDiaDaSemana;
@@ -122,7 +176,15 @@ const retrocederMes = () => {
   atualizaCalendario();
 };
 
+// Função para avançar mês
+const avançarMes = () => {
+  dataAtual = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1);
+
+  atualizaCalendario();
+};
+
 retrocederMesCalendarioPrincipal.addEventListener('click', retrocederMes);
+avançarProximoMes.addEventListener('click', avançarMes);
 
 // Função para atualizar calendário após clicar em retroceder
 const atualizaCalendario = () => {
@@ -131,5 +193,4 @@ const atualizaCalendario = () => {
   mesAtualConteudoCalendario();
   diadeHojeConteudoCalendario();
   populaCalendario();
-
 };
