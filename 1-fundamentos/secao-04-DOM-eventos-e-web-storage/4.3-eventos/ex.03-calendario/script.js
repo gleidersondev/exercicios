@@ -88,7 +88,7 @@ const avancaPostIt = () => {
 
 };
 
-
+avancarProximoMesMuralCompromissos.addEventListener('click', avancaPostIt);
 
 
 
