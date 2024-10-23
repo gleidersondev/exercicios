@@ -10,6 +10,7 @@ let dataAtual = new Date();
 const retrocederMesCalendarioPrincipal = conteudoCalendario.querySelector('#go-back-month');
 const retrocederMesMuralCompromissos = document.querySelector('#go-back-month-postit');
 const postIts = document.querySelector('#post-its');
+const anoAtivoMuralCompromissos = document.querySelector('#year-postit');
 
 // let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
 
@@ -55,6 +56,9 @@ let mesAtivoMuralCompromissos = dataAtualMuralCompromissos.getMonth();
 console.log('O mes ativo no mural de compromisso e *****', mesAtivoMuralCompromissos);
 
 let anoAtualMuralCompromissos = dataAtualMuralCompromissos.getFullYear();
+anoAtivoMuralCompromissos.textContent = anoAtualMuralCompromissos;
+console.log('O ano do mural de compromissos é', anoAtualMuralCompromissos);
+
 
 
 const retrocederPostIt = () => {
