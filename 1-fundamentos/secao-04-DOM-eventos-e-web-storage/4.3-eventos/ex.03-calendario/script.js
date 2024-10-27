@@ -172,7 +172,13 @@ populaCalendario();
 // Função para pegar o elemento clicado e abrir popover
 calendario.addEventListener('dblclick', () => {
   popover.style.display = 'block';
-})
+});
+
+//Função ao clicar em qualquer lugar o popover fechar
+document.body.addEventListener('click', () => {
+  popover.style.display = 'none';
+});
+
 
 // Função para retorceder mês
 const retrocederMes = () => {
