@@ -12,6 +12,7 @@ const retrocederMesMuralCompromissos = document.querySelector('#go-back-month-po
 const postIts = document.querySelector('#post-its');
 const anoAtivoMuralCompromissos = document.querySelector('#year-postit');
 const avancarProximoMesMuralCompromissos = document.querySelector('#advance-month-postit');
+const popover = document.querySelector('.popover');
 
 // let retroceder = uma função que altere a dataAtual.getMonth para o mes anterior e altere automaticamnte a função encontrarPrimeiroDiaDoMes dataAtual.setDate(1)
 
@@ -167,6 +168,11 @@ const populaCalendario = () => {
 };
 
 populaCalendario();
+
+// Função para pegar o elemento clicado e abrir popover
+calendario.addEventListener('dblclick', () => {
+  popover.style.display = 'block';
+})
 
 // Função para retorceder mês
 const retrocederMes = () => {

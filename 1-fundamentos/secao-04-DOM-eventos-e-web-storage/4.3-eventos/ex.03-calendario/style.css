@@ -65,7 +65,9 @@ ul {
 }
 
 
-
+.popover {
+  display: none;
+}
 
 
 
