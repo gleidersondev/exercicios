@@ -169,15 +169,34 @@ const populaCalendario = () => {
 
 populaCalendario();
 
-// Função para pegar o elemento clicado e abrir popover
-calendario.addEventListener('dblclick', () => {
+// Função para qdo clicar sobre o dia abrir popover
+// const diaSelecionado = () => {
+//   const dia = document.querySelector('#')
+
+// }
+calendario.addEventListener('dblclick', (event) => {
+  const elemento = event.target;
+  console.log(elemento);
+  
+  // if (elemento.textContent.contains('')) {
+  //   console.log('verdadeiro');
+  // } else {
+  //   console.log('falso');
+  // };
+  
+  // elemento.classList.add('selected-day');
+  
+  
   popover.style.display = 'block';
 });
 
-//Função ao clicar em qualquer lugar o popover fechar
-document.body.addEventListener('click', () => {
-  popover.style.display = 'none';
-});
+//Função para qdo clicar em qualquer lugar fechar o popover 
+// calendario.addEventListener('click', (event) => {
+//   console.log(typeof event.target.textContent);
+  
+
+
+// });
 
 
 // Função para retorceder mês
