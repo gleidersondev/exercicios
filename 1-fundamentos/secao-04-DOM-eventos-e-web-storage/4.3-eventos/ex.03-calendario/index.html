@@ -8,54 +8,67 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <title>Meu Calendário</title>
   </head>
 
   <body>
-    <header id="header-content">
-      <h1 class="comic-neue-bold">RemindMeNow</h1>
-      <nav></nav>
-    </header>
+    <div id="overlay">
+      <header id="header-content">
+        <h1 class="comic-neue-bold">RemindMeNow</h1>
+        <nav></nav>
+      </header>
 
-    <aside id="wall-content">
-      <section>
-        <div id="title-commitments">
-          <div><h2>Mural de Compromissos</h2></div>
-          <div id="go-back-month-postit">Retroceder</div>
-          <div id="month-postit"></div>
-          <div id="year-postit"></div>
-          <div id="advance-month-postit">Avançar</div>
-        </div>
-        <div id="post-its">
-        </div>
-      </section>
-    </aside>
+      <aside id="wall-content">
+        <section>
+          <div id="title-commitments">
+            <div><h2>Mural de Compromissos</h2></div>
+            <div id="go-back-month-postit">Retroceder</div>
+            <div id="month-postit"></div>
+            <div id="year-postit"></div>
+            <div id="advance-month-postit">Avançar</div>
+          </div>
+          <div id="post-its"></div>
+        </section>
+      </aside>
 
-    <main id="calendar-content"> 
-      <section id="main-calendar">
-        <div id="active-month">
-          <div id="go-back-month">retroceder</div>
-          <div id="year">ano</div>
-          <div id="month"></div>
-          <div id="advance-month">avançar</div>
-        </div>
-        <div id="decorative-image">
-          <div id="todays-day"></div>
-        </div>
-        <div id="current-calendar">
-          <div id="initials-of-day"></div>
-          <div id="calendar"></div>
-        </div>
-      </section>
-    </main>
+      <main id="calendar-content">
+        <section id="main-calendar">
+          <div id="active-month">
+            <div id="go-back-month">retroceder</div>
+            <div id="year">ano</div>
+            <div id="month"></div>
+            <div id="advance-month">avançar</div>
+          </div>
+          <div id="decorative-image">
+            <div id="todays-day"></div>
+          </div>
+          <div id="current-calendar">
+            <div id="initials-of-day"></div>
+            <div id="calendar"></div>
+          </div>
+          <div class="popover">
+            <div><h3>Adicionar Compromisso</h3></div>
+            <div>
+              <label for="commitment-title">Título</label>
+              <input type="text" />
+              <label for="commitment-description">Descrição</label>
+              <textarea id="">descrição</textarea>
+              <button>Salvar</button>
+              <button>Cancelar</button>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    <aside id="small-calendar-content">
-      <section></section>
-    </aside>
+      <aside id="small-calendar-content">
+        <section></section>
+      </aside>
 
-    <footer></footer>
+      <footer></footer>
 
-    <script src="script.js"></script>
+      <script src="script.js"></script>
+    </div>
   </body>
 </html>

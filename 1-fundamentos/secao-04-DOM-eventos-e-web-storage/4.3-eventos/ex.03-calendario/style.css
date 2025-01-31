@@ -4,6 +4,13 @@
   padding: 0; 
 }
 
+#overlay {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   background: linear-gradient(45deg, #BBD1D3, #F2DECF);
   flex-wrap: wrap;
@@ -65,7 +72,9 @@ ul {
 }
 
 
-
+.popover {
+  display: none;
+}
 
 
 
